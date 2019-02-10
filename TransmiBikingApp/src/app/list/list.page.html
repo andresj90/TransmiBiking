@@ -14,7 +14,7 @@
     <ion-item *ngFor="let item of items">
       <ion-icon [name]="item.icon" slot="start"></ion-icon>
       {{item.title}}
-      <div class="item-note" slot="end">
+      <div class="item-note" slot="end" (click) = "showMessage()">
         {{item.note}}
       </div>
     </ion-item>
