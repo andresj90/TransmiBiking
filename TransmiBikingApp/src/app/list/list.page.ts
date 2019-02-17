@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatePicker } from '@ionic-native/date-picker/ngx';
 
 @Component({
   selector: 'app-list',
@@ -19,10 +20,11 @@ export class ListPage implements OnInit {
     'bluetooth',
     'build'
   ];
-  public items: Array<{ title: string; note: string; icon: string }> = [];
-  constructor() {
+  public items: Array<{ id: number, title: string; note: string; icon: string }> = [];
+  constructor(public datePicker: DatePicker) {
     for (let i = 1; i < 11; i++) {
       this.items.push({
+        id: i,
         title: 'Item ' + i,
         note: 'Opcion #' + i,
         icon: this.icons[Math.floor(Math.random() * this.icons.length)]
@@ -31,10 +33,24 @@ export class ListPage implements OnInit {
 
   }
 
-  showMessage(){
+  showMessage() {
     window.alert('You have clicked me');
-  } 
+  }
 
+  clickableOption(id) {
+    if (id % 2 === 0) {
+      this.datePicker.show({
+        date: new Date(),
+        mode: 'date',
+        androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+      }).then(
+        date => console.log('Got date: ', date),
+        err => console.log('Error occurred while getting date: ', err)
+      );
+    } else {
+
+    }
+  }
   ngOnInit() {
   }
   // add back when alpha.4 is out

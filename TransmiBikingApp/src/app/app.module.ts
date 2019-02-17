@@ -10,7 +10,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 import { GoogleMaps } from '@ionic-native/google-maps';
+
+import { DatePicker } from '@ionic-native/date-picker/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +29,7 @@ import { GoogleMaps } from '@ionic-native/google-maps';
     SplashScreen,
     Geolocation,
     GoogleMaps,
+    DatePicker,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      Menu
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,7 @@
     <ion-item *ngFor="let item of items">
       <ion-icon [name]="item.icon" slot="start"></ion-icon>
       {{item.title}}
-      <div class="item-note" slot="end" (click) = "showMessage()">
+      <div slot="end" (click)="clickableOption(item.id)">
         {{item.note}}
       </div>
     </ion-item>
