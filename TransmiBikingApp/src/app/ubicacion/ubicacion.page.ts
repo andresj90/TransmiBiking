@@ -6,6 +6,7 @@ import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
   templateUrl: './ubicacion.page.html',
   styleUrls: ['./ubicacion.page.scss'],
 })
+
 export class UbicacionPage implements OnInit {
 
   constructor(private geolocation: Geolocation) { }
@@ -13,16 +14,15 @@ export class UbicacionPage implements OnInit {
   ngOnInit() {
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
 
     this.geolocationNative();
   }
 
-  geolocationNative(){
-    this.geolocation.getCurrentPosition().then((geposition: Geoposition) =>{
-    
-          console.log(geposition);
+  geolocationNative() {
+    this.geolocation.getCurrentPosition().then((geposition: Geoposition) => {
+
+      console.log(geposition);
     })
   }
-
 }
