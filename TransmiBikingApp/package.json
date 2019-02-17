@@ -71,24 +71,21 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-geolocation": {},
-
       "cordova-plugin-googlemaps": {
         "API_KEY_FOR_ANDROID": "AIzaSyBqFoMI1NjYv_QLR4ZnOKREagwxSZ6n4-M",
         "API_KEY_FOR_IOS": "AIzaSyBqFoMI1NjYv_QLR4ZnOKREagwxSZ6n4-M"
-      }
-    }
-
-      "cordova-plugin-datepicker": {},
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-statusbar": {},
-      "cordova-plugin-device": {},
-      "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {},
-      "cordova-plugin-ionic-keyboard": {}
+      },
+      "cordova-plugin-datepicker": {}
     },
-    "platforms": [
-      "browser"
-    ]
-
-  }
+    "cordova-plugin-datepicker": {},
+    "cordova-plugin-whitelist": {},
+    "cordova-plugin-statusbar": {},
+    "cordova-plugin-device": {},
+    "cordova-plugin-splashscreen": {},
+    "cordova-plugin-ionic-webview": {},
+    "cordova-plugin-ionic-keyboard": {}
+  },
+  "platforms": [
+    "browser"
+  ]
 }

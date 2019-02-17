@@ -21,9 +21,9 @@ export class AppComponent {
       icon: 'list'
     },
     {
-      title: 'Ubicacion',
+      title: 'Ubication',
       url: '/ubicacion',
-      icon: 'ubicacion'
+      icon: 'ubication'
     }
   ];
 
