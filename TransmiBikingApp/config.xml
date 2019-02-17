@@ -87,6 +87,6 @@
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBqFoMI1NjYv_QLR4ZnOKREagwxSZ6n4-M" />
         <variable name="API_KEY_FOR_IOS" value="AIzaSyBqFoMI1NjYv_QLR4ZnOKREagwxSZ6n4-M" />
     </plugin>
-    <engine name="browser" spec="5.0.4" />
     <plugin name="cordova-plugin-datepicker" spec="0.9.3" />
+    <engine name="browser" spec="5.0.4" />
 </widget>
