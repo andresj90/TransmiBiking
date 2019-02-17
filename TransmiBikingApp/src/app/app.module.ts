@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { DatePicker } from '@ionic-native/date-picker/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,8 +24,9 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     StatusBar,
     SplashScreen,
     Geolocation,
+    DatePicker,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
