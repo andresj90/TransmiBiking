@@ -14,6 +14,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { GoogleMaps } from '@ionic-native/google-maps';
 
 import { DatePicker } from '@ionic-native/date-picker/ngx';
+import { IonicStorageModule } from '@ionic/storage';
+
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { DatePicker } from '@ionic-native/date-picker/ngx';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,

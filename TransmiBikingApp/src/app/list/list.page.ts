@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-list',
@@ -21,7 +22,7 @@ export class ListPage implements OnInit {
     'build'
   ];
   public items: Array<{ id: number, title: string; note: string; icon: string }> = [];
-  constructor(public datePicker: DatePicker) {
+  constructor(public datePicker: DatePicker, private storage: Storage) {
     for (let i = 1; i < 11; i++) {
       this.items.push({
         id: i,
@@ -44,7 +45,10 @@ export class ListPage implements OnInit {
         mode: 'date',
         androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
       }).then(
-        date => console.log('Got date: ', date),
+        date => {
+          console.log('Got date: ', date)
+          this.storage.set('date', date)
+        },
         err => console.log('Error occurred while getting date: ', err)
       );
     } else {
