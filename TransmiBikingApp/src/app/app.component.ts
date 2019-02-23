@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -12,7 +13,7 @@ export class AppComponent {
     {
       title: 'Home',
       url: '/home',
-      icon: 'home'
+      icon: 'Home'
     },
     {
       title: 'List',
@@ -22,13 +23,14 @@ export class AppComponent {
     {
       title: 'Ubication',
       url: '/ubicacion',
-      icon: 'ubication'
+      icon: 'Walk'
     },
     {
-      title: 'Profile',
-      url: '/profile',
-      icon: 'profile'
+      title: 'Settings',
+      url: '/settings',
+      icon: 'settings'
     }
+
   ];
 
   constructor(
@@ -40,7 +42,7 @@ export class AppComponent {
   }
 
   initializeApp() {
-    this.platform.ready().then((readySource) => {
+    this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

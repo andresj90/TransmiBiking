@@ -26,7 +26,12 @@ const routes: Routes = [
   {
     path: 'prestamo',
     loadChildren: './prestamo/prestamo.module#PrestamoPageModule'
+  },
+  {
+    path: 'settings',
+    loadChildren: './settings/settings.module#SettingsPageModule'
   }
+
 
 
 ];
