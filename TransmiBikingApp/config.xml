@@ -83,16 +83,12 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^3.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-plugin-geolocation" spec="4.0.1" />
-    <engine name="browser" spec="5.0.4" />
     <plugin name="cordova-plugin-datepicker" spec="0.9.3" />
     <plugin name="cordova-plugin-googlemaps" spec="2.5.0">
         <variable name="API_KEY_FOR_ANDROID" value="AIzaSyBqFoMI1NjYv_QLR4ZnOKREagwxSZ6n4-M" />
         <variable name="API_KEY_FOR_IOS" value="AIzaSyBqFoMI1NjYv_QLR4ZnOKREagwxSZ6n4-M" />
     </plugin>
-
     <plugin name="cordova-plugin-datepicker" spec="0.9.3" />
-    <engine name="browser" spec="5.0.4" />
-
     <plugin name="cordova-sqlite-storage" spec="3.0.0" />
-
+    <engine name="browser" spec="5.0.4" />
 </widget>
