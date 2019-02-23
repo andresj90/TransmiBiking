@@ -10,37 +10,37 @@
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/img.jpg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Bienvenidos TransmiBiking</ion-card-subtitle>
-        <ion-card-title>Bienvenidos</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Esta aplicación se utilizara para el prestamo
-          de bicicletas y eventos para usuarios.
-        </p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Panel de control</ion-label>
-      </ion-list-header>
-      <ion-item [routerLink]="[ '/prestamo']">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Mis prestamos</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Configuracion</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Evento</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Cuenta</ion-label>
-      </ion-item>
-    </ion-list>
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/img.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Bienvenidos TransmiBiking</ion-card-subtitle>
+      <ion-card-title>Bienvenidos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Esta aplicación se utilizara para el prestamo
+        de bicicletas y eventos para usuarios.
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Panel de control</ion-label>
+    </ion-list-header>
+    <ion-item [routerLink]="[ '/prestamo']">
+      <ion-icon slot="start" color="medium" name="book"></ion-icon>
+      <ion-label>Mis prestamos</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="[ '/settings']">
+      <ion-icon slot="start" color="medium" name="build"></ion-icon>
+      <ion-label>Configuracion</ion-label>
+    </ion-item>
+    <ion-item href="">
+      <ion-icon slot="start" color="medium" name="grid"></ion-icon>
+      <ion-label>Evento</ion-label>
+    </ion-item>
+    <ion-item href="">
+      <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
+      <ion-label>Cuenta</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
