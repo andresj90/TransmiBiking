@@ -8,7 +8,31 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content padding>
-
+    <ion-title>My Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card-header>
+    <ion-avatar>
+      <img [src]="user.profilePic">
+    </ion-avatar>
+  </ion-card-header>
+  <ion-list>
+    <ion-item>
+      <ion-label>Name: {{user.name}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Name: {{user.lastName}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Username: {{user.userName}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Loans: {{user.loans}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last Loan: {{user.lastLoan}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
