@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Settings
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item [routerLink]="[ '/home']">
+      <ion-button color="secondary">Inicio</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button color="secondary" (click)="presentAlertConfirm()">Camara</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button color="secondary" (click)="presentAlertConfirm()">Salir</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

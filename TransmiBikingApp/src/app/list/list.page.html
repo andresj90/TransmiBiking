@@ -4,24 +4,34 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      Prestamo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+  <ion-item>
+    <ion-label position="stacked">Fecha prestamo</ion-label>
+    <ion-input type="date" [value]="reserva.dateReservation"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Lugar prestamo</ion-label>
+    <ion-select multiple="false" placeholder="Seleccione Estaciòn" [(value)]="reserva.originReservation">
+      <ion-select-option value="SA">Station A</ion-select-option>
+      <ion-select-option value="SB">Station B</ion-select-option>
+      <ion-select-option value="SC">Station C</ion-select-option>
+      <ion-select-option value="SD">Station D</ion-select-option>
+      <ion-select-option value="SE">Station E</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Tipo bicicleta</ion-label>
+    <ion-select multiple="false" placeholder="Seleccione Tipo Bicicleta" [(value)]="reserva.bykeType">
+      <ion-select-option value="A">Adulto</ion-select-option>
+      <ion-select-option value="N">Niño</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button color="primary" expand="block" (click)="generateBooking()">
+    Generar Reserva
+  </ion-button>
 </ion-content>

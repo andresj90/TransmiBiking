@@ -21,9 +21,24 @@
     "@angular/platform-browser-dynamic": "^7.2.2",
     "@angular/router": "^7.2.2",
     "@ionic-native/core": "^5.0.0",
+    "@ionic-native/date-picker": "^5.1.0",
+    "@ionic-native/geolocation": "^5.1.0",
+    "@ionic-native/google-maps": "^5.0.0-beta.26",
     "@ionic-native/splash-screen": "^5.0.0",
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.0.0",
+    "@ionic/storage": "^2.2.0",
+    "cordova-browser": "5.0.4",
+    "cordova-plugin-datepicker": "0.9.3",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-geolocation": "4.0.1",
+    "cordova-plugin-googlemaps": "2.5.0",
+    "cordova-plugin-ionic-keyboard": "^2.1.3",
+    "cordova-plugin-ionic-webview": "^3.1.2",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-sqlite-storage": "3.0.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.29"
@@ -38,9 +53,9 @@
     "@angular/compiler-cli": "~7.2.2",
     "@angular/language-service": "~7.2.2",
     "@ionic/angular-toolkit": "~1.3.0",
-    "@types/node": "~10.12.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~10.12.0",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
@@ -50,9 +65,40 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
+    "standard": "^12.0.1",
     "ts-node": "~8.0.0",
     "tslint": "~5.12.0",
     "typescript": "~3.1.6"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-geolocation": {},
+      "cordova-plugin-googlemaps": {
+        "API_KEY_FOR_ANDROID": "AIzaSyBqFoMI1NjYv_QLR4ZnOKREagwxSZ6n4-M",
+        "API_KEY_FOR_IOS": "AIzaSyBqFoMI1NjYv_QLR4ZnOKREagwxSZ6n4-M"
+      },
+      "cordova-plugin-datepicker": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-sqlite-storage": {}
+    },
+    "cordova-plugin-datepicker": {},
+    "cordova-plugin-whitelist": {},
+    "cordova-plugin-statusbar": {},
+    "cordova-plugin-device": {},
+    "cordova-plugin-splashscreen": {},
+    "cordova-plugin-ionic-webview": {},
+    "cordova-plugin-ionic-keyboard": {},
+    "platforms": [
+      "browser"
+    ]
+  },
+  "platforms": [
+    "browser"
+  ]
 }
