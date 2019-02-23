@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -24,6 +23,11 @@ export class AppComponent {
       title: 'Ubication',
       url: '/ubicacion',
       icon: 'ubication'
+    },
+    {
+      title: 'Profile',
+      url: '/profile',
+      icon: 'profile'
     }
   ];
 
@@ -36,7 +40,7 @@ export class AppComponent {
   }
 
   initializeApp() {
-    this.platform.ready().then(() => {
+    this.platform.ready().then((readySource) => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
