@@ -20,5 +20,7 @@
     <ion-item>
       <ion-button color="secondary" (click)="presentAlertConfirm()">Salir</ion-button>
     </ion-item>
+    <ion-button (click)="takePicture()">tomar</ion-button>
+    <img *ngIf="image" [src]="image" alt="image">
   </ion-list>
 </ion-content>
