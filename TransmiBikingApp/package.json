@@ -75,8 +75,8 @@
     "plugins": {
       "cordova-plugin-geolocation": {},
       "cordova-plugin-googlemaps": {
-        "API_KEY_FOR_ANDROID": "AIzaSyBqFoMI1NjYv_QLR4ZnOKREagwxSZ6n4-M",
-        "API_KEY_FOR_IOS": "AIzaSyBqFoMI1NjYv_QLR4ZnOKREagwxSZ6n4-M"
+        "API_KEY_FOR_ANDROID": "AIzaSyBRbnIJuCUw-18eiYSEHEyuDlmDQkr-jwU",
+        "API_KEY_FOR_IOS": "AIzaSyBRbnIJuCUw-18eiYSEHEyuDlmDQkr-jwU"
       },
       "cordova-plugin-datepicker": {},
       "cordova-plugin-whitelist": {},
@@ -85,7 +85,8 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-sqlite-storage": {}
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-camera": {}
     },
     "cordova-plugin-datepicker": {},
     "cordova-plugin-whitelist": {},

@@ -10,7 +10,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { IonicStorageModule } from '@ionic/storage';
-
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 
 @NgModule({
@@ -28,6 +29,8 @@ import { IonicStorageModule } from '@ionic/storage';
     Geolocation,
     GoogleMaps,
     DatePicker,
+    Camera,
+    WebView,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

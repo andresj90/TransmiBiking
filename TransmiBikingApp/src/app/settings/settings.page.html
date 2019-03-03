@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
+    <ion-title text-center>
       Settings
     </ion-title>
   </ion-toolbar>
@@ -15,7 +15,8 @@
       <ion-button color="secondary">Inicio</ion-button>
     </ion-item>
     <ion-item>
-      <ion-button color="secondary" (click)="presentAlertConfirm()">Camara</ion-button>
+      <ion-button color="secondary" (click)="takePicture()">Camara</ion-button>
+      <img *ngIf="image" [src]="image" alt="image">
     </ion-item>
     <ion-item>
       <ion-button color="secondary" (click)="presentAlertConfirm()">Salir</ion-button>
