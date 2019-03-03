@@ -9,7 +9,7 @@ export class ProfilePage implements OnInit {
 
   user = {
     name: 'Anatolio',
-    lastName: 'Rios', 
+    lastName: 'Rios',
     userName: 'toliori22',
     loans: 7,
     lastLoan: new Date(2019,2,11),

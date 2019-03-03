@@ -12,26 +12,27 @@
 <ion-content>
   <ion-item>
     <ion-label position="stacked">Fecha prestamo</ion-label>
-    <ion-input type="date" [value]="reserva.dateReservation"></ion-input>
+    <ion-input type="date" [(ngModel)]="reserva.dateReservation"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Lugar prestamo</ion-label>
-    <ion-select multiple="false" placeholder="Seleccione Estaciòn" [(value)]="reserva.originReservation">
-      <ion-select-option value="SA">Station A</ion-select-option>
-      <ion-select-option value="SB">Station B</ion-select-option>
-      <ion-select-option value="SC">Station C</ion-select-option>
-      <ion-select-option value="SD">Station D</ion-select-option>
-      <ion-select-option value="SE">Station E</ion-select-option>
+    <ion-select multiple="false" placeholder="Seleccione Estaciòn" [(ngModel)]="reserva.originReservation">
+      <ion-select-option value="Station A">Station A</ion-select-option>
+      <ion-select-option value="Station B">Station B</ion-select-option>
+      <ion-select-option value="Station C">Station C</ion-select-option>
+      <ion-select-option value="Station D">Station D</ion-select-option>
+      <ion-select-option value="Station E">Station E</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Tipo bicicleta</ion-label>
-    <ion-select multiple="false" placeholder="Seleccione Tipo Bicicleta" [(value)]="reserva.bykeType">
-      <ion-select-option value="A">Adulto</ion-select-option>
-      <ion-select-option value="N">Niño</ion-select-option>
+    <ion-select multiple="false" placeholder="Seleccione Tipo Bicicleta" [(ngModel)]="reserva.bykeType">
+      <ion-select-option value="Adulto">Adulto</ion-select-option>
+      <ion-select-option value="Niño">Niño</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-button color="primary" expand="block" (click)="generateBooking()">
     Generar Reserva
   </ion-button>
+  <ion-button color="secondary" expand="block" (click)="displayReservation()">Confirmar Reserva</ion-button>
 </ion-content>
