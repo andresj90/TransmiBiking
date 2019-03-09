@@ -12,8 +12,8 @@ import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
-
-
+import { NgxQRCodeModule} from 'ngx-qrcode2';
+import { BarcodeScanner} from '@ionic-native/barcode-scanner/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +21,8 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    NgxQRCodeModule
   ],
   providers: [
     StatusBar,
@@ -31,6 +32,7 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
     DatePicker,
     Camera,
     WebView,
+    BarcodeScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
