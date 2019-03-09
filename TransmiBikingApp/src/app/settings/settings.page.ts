@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.page.html',
@@ -10,11 +11,12 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 export class SettingsPage implements OnInit {
 
   image: String;
-
+  scannedCode = null;
   constructor(
     public alertacontroller: AlertController,
     public camera: Camera,
-    public webview: WebView
+    public webview: WebView,
+    public barcodeScanner: BarcodeScanner
   ) { }
 
   ngOnInit() {
@@ -56,6 +58,12 @@ export class SettingsPage implements OnInit {
       }, (err) => {
         console.log(err);
       })
+  }
+
+  scanCode(){
+    this.barcodeScanner.scan().then(barcodeData =>{
+      this.scannedCode = barcodeData.text;
+    })
   }
 
 }
