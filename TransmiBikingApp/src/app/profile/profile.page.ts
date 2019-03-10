@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -37,4 +38,11 @@ export class ProfilePage implements OnInit {
       // Error!
     });
   }
+
+  seeMyRides(){
+    for (let index = 0; index < 20; index++) {
+      let ride = `your ride ${index +1} `;
+    }
+  }
+
 }
