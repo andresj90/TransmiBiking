@@ -25,6 +25,7 @@
     "@ionic-native/camera": "^5.2.0",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/date-picker": "^5.1.0",
+    "@ionic-native/flashlight": "^5.2.0",
     "@ionic-native/geolocation": "^5.1.0",
     "@ionic-native/google-maps": "^5.0.0-beta.26",
     "@ionic-native/ionic-webview": "^5.2.0",

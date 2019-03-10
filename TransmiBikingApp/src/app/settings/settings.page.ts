@@ -3,6 +3,7 @@ import { AlertController } from '@ionic/angular';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { Flashlight } from '@ionic-native/flashlight/ngx';
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.page.html',
@@ -16,7 +17,8 @@ export class SettingsPage implements OnInit {
     public alertacontroller: AlertController,
     public camera: Camera,
     public webview: WebView,
-    public barcodeScanner: BarcodeScanner
+    public barcodeScanner: BarcodeScanner,
+    private flashlight: Flashlight
   ) { }
 
   ngOnInit() {
@@ -60,10 +62,13 @@ export class SettingsPage implements OnInit {
       })
   }
 
-  scanCode(){
-    this.barcodeScanner.scan().then(barcodeData =>{
+  scanCode() {
+    this.barcodeScanner.scan().then(barcodeData => {
       this.scannedCode = barcodeData.text;
     })
   }
 
+  activateFlashlight() {
+    this.flashlight.switchOn();
+  }
 }

@@ -20,11 +20,17 @@
     </ion-item>
     <ion-item>
       <ion-button color="secondary" (click)="scanerCode()">QR<ion-icon name="qr-scanner">
-      </ion-icon></ion-button>
+        </ion-icon>
+      </ion-button>
       <img *ngIf="image" [src]="image" alt="image">
     </ion-item>
     <ion-item>
       <ion-button color="secondary" (click)="presentAlertConfirm()">Salir</ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-button color="secondary" (click)="activateFlashlight()">
+        Activate Flashlight
+      </ion-button>
     </ion-item>
   </ion-list>
   <ion-card *ngIf="scannedCode">
