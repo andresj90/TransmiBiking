@@ -10,9 +10,11 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { IonicStorageModule } from '@ionic/storage';
-
-
-
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { NgxQRCodeModule} from 'ngx-qrcode2';
+import { BarcodeScanner} from '@ionic-native/barcode-scanner/ngx';
+import { Screenshot } from '@ionic-native/screenshot/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -20,7 +22,8 @@ import { IonicStorageModule } from '@ionic/storage';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    NgxQRCodeModule
   ],
   providers: [
     StatusBar,
@@ -28,6 +31,9 @@ import { IonicStorageModule } from '@ionic/storage';
     Geolocation,
     GoogleMaps,
     DatePicker,
+    Camera,
+    WebView,
+    BarcodeScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
