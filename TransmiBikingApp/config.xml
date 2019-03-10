@@ -95,8 +95,10 @@
     <engine name="android" spec="~7.1.4" />
     <plugin name="cordova-plugin-calendar" spec="5.1.4" />
     <plugin name="cordova-plugin-nativestorage" spec="2.3.2" />
-    <plugin name="cordova-plugin-qrscanner" spec="~2.6.0" />
-    <plugin name="phonegap-plugin-barcodescanner" spec="~8.0.1">
+    <plugin name="cordova-plugin-qrscanner" spec="2.6.0" />
+    <plugin name="com.darktalker.cordova.screenshot" spec="0.1.6" />
+    <plugin name="phonegap-plugin-barcodescanner" spec="8.0.1">
         <variable name="ANDROID_SUPPORT_V4_VERSION" value="27.+" />
     </plugin>
+    <plugin name="cordova-plugin-x-socialsharing" spec="5.4.4" />
 </widget>

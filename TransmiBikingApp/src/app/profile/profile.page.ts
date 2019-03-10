@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 @Component({
   selector: 'app-profile',
@@ -16,9 +17,24 @@ export class ProfilePage implements OnInit {
     profilePic: '/assets/icon/man.svg'
   }
 
-  constructor() { }
+  constructor(private socialSharing: SocialSharing) { }
 
   ngOnInit() {
   }
 
+  shareWitheFriends() {
+    // Check if sharing via email is supported
+    this.socialSharing.canShareViaEmail().then(() => {
+      // Sharing via email is possible
+    }).catch(() => {
+      // Sharing via email is not possible
+    });
+
+    // Share via email
+    this.socialSharing.shareViaEmail('Body', 'Subject', ['recipient@example.org']).then(() => {
+      // Success!
+    }).catch(() => {
+      // Error!
+    });
+  }
 }

@@ -14,6 +14,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { NgxQRCodeModule} from 'ngx-qrcode2';
 import { BarcodeScanner} from '@ionic-native/barcode-scanner/ngx';
+import { Screenshot } from '@ionic-native/screenshot/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
