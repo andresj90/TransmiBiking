@@ -30,7 +30,17 @@ const routes: Routes = [
   {
     path: 'settings',
     loadChildren: './settings/settings.module#SettingsPageModule'
-  }
+  },
+  {
+    path: 'news',
+    loadChildren: './news/news.module#NewsPageModule'
+  },
+  {
+    path: 'login',
+    loadChildren: './login/login.module#LoginPageModule'
+  },  { path: 'login', loadChildren: './login/login.module#LoginPageModule' }
+
+
 
 
 

@@ -102,4 +102,11 @@
     <plugin name="cordova-plugin-flashlight" spec="3.2.0" />
     <engine name="browser" spec="5.0.4" />
     <engine name="android" spec="~7.1.4" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.4.4" />
+    <plugin name="cordova-plugin-flashlight" spec="^3.2.0" />
+    <engine name="browser" spec="5.0.4" />
+    <engine name="android" spec="~7.1.4" />
+    <plugin name="cordova-plugin-telerik-imagepicker" spec="~2.3.0">
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="your usage message" />
+    </plugin>
 </widget>

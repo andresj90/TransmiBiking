@@ -15,10 +15,15 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { NgxQRCodeModule} from 'ngx-qrcode2';
 import { BarcodeScanner} from '@ionic-native/barcode-scanner/ngx';
 import { Screenshot } from '@ionic-native/screenshot/ngx';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from 'src/environments/environment';
+import { LoginPage } from './login/login.page';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginPage],
   entryComponents: [],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,

@@ -1,0 +1,18 @@
+ionic-avatar{
+    text-align: center;
+}
+page-profile{
+    //ion-content{
+      //  background: #7949a3;
+    //}
+    //.bg{
+    //    background: linear-gradient(to bottom,#3d8866 0%, #b65129 100%);
+    //}
+    .bg-image{
+        background-image: url('/src/assets/img/bg.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; 
+    }  
+}
+
