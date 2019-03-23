@@ -59,13 +59,13 @@ export class SettingsPage implements OnInit {
         this.image = this.webview.convertFileSrc(ImageData);
       }, (err) => {
         console.log(err);
-      })
+      });
   }
 
   scanCode() {
     this.barcodeScanner.scan().then(barcodeData => {
       this.scannedCode = barcodeData.text;
-    })
+    });
   }
 
   activateFlashlight() {
