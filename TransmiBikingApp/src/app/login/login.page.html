@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-center>
+      Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="onSubmitAddUser()">
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input id="email" name="email"  [(ngModel)]="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input id="password" name="password"  [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+    <ion-button primary block type="submit" value="Guardar" [routerLink]="[ '/list']">Sign In</ion-button>
+  </form>
+</ion-content>

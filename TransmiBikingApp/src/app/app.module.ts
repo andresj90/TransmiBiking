@@ -10,17 +10,33 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { IonicStorageModule } from '@ionic/storage';
-
-
-
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { Screenshot } from '@ionic-native/screenshot/ngx';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from 'src/environments/environment';
+import { LoginPage } from './login/login.page';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthService } from './servicio/auth.service';
+import { FormsModule } from '@angular/forms';
+import { AngularFirestore } from 'angularfire2/firestore';
+import {FlashMessagesModule} from 'angular2-flash-messages';
+import {FlashMessagesService} from 'angular2-flash-messages';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    NgxQRCodeModule,
+    FormsModule,
+    AngularFireAuthModule,
+    FlashMessagesModule
   ],
   providers: [
     StatusBar,
@@ -28,6 +44,12 @@ import { IonicStorageModule } from '@ionic/storage';
     Geolocation,
     GoogleMaps,
     DatePicker,
+    Camera,
+    WebView,
+    BarcodeScanner,
+    AuthService,
+    FlashMessagesService,
+    AngularFirestore,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

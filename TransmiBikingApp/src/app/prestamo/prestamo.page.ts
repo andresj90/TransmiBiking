@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from '../servicio/auth.service';
 @Component({
   selector: 'app-prestamo',
   templateUrl: './prestamo.page.html',
@@ -7,31 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrestamoPage implements OnInit {
 
-  prestamos = [{
-    date: new Date(2018, 8, 22),
-    duration: '2 hours',
-    origin: 'station A',
-    return: 'station C'
-  }, {
-    date: new Date(2018, 9, 12),
-    duration: '4 hours',
-    origin: 'station D',
-    return: 'station G'
-  }, {
-    date: new Date(2018, 11, 22),
-    duration: '5 hours',
-    origin: 'station B',
-    return: 'station E'
-  }, {
-    date: new Date(2019, 1, 17),
-    duration: '7 hours',
-    origin: 'station A',
-    return: 'station H'
-  }]
+  stations = ['A', 'B', 'C', 'D', 'E', 'F'];
+  hours = [2, 3, 4, 5, 6, 7, 8, 9];
+  public prestamo = [];
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
+
+  ObtenerPrestamos() {
+
+  }
 
   ngOnInit() {
+    // trae todos los comentarios
+    this.auth.mostrarPrestamo().subscribe((prestamo) => {
+      this.prestamo = [];
+      prestamo.forEach((prestamodata: any) => {
+        this.prestamo.push({
+          id: prestamodata.payload.doc.id,
+          data: prestamodata.payload.doc.data()
+        });
+      });
+    });
   }
 
 }

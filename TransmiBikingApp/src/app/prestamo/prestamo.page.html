@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
+    <ion-title text-center>
       Lista Prestamos
     </ion-title>
   </ion-toolbar>
@@ -11,9 +11,9 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let p of prestamos">
+    <ion-item *ngFor="let p of prestamo">
       <!-- <i-p> </i-p> -->
-      <ion-label>Fecha: {{p.date}}, duracion: {{p.duration}}, origen: {{p.origin}}, retorno: {{p.return}}</ion-label>
+      <ion-label>Fecha: {{p.data.dateReservation}}, origen: {{p.data.origin}}, bikeType: {{p.data.bikeType}} </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

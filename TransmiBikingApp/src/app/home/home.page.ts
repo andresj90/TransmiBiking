@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Calendar } from '@ionic-native/calendar/ngx';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  constructor(private calendar: Calendar) { }
+
+  createCalendar() {
+    this.calendar.createCalendar('MyCalendar').then(
+      (msg) => { console.log(msg); },
+      (err) => { console.log(err); }
+    );
+  }
 }
