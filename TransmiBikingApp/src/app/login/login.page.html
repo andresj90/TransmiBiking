@@ -19,6 +19,6 @@
       <ion-label floating>Password</ion-label>
       <ion-input id="password" name="password"  [(ngModel)]="password" type="password"></ion-input>
     </ion-item>
-    <ion-button primary block type="submit" value="Guardar">Sign In</ion-button>
+    <ion-button primary block type="submit" value="Guardar" [routerLink]="[ '/list']">Sign In</ion-button>
   </form>
 </ion-content>

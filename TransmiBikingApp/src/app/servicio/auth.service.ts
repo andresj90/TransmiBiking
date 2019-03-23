@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase/app';
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,8 @@ import * as firebase from 'firebase/app';
 export class AuthService {
 
   constructor(
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    public db: AngularFirestore
   ) { }
 
   registeruser(email: string, pass: string) {
@@ -32,5 +34,17 @@ export class AuthService {
 
   logout() {
     return this.afAuth.auth.signOut();
+  }
+
+  getIud() {
+    return firebase.auth().currentUser.uid;
+  }
+  createPrestamo(data: { dateReservation: String, origin: String, bikeType: String }) {
+    console.log('servicio');
+    // trae iud de usuario login console.log(this.getIud());
+    return this.db.collection('prestamo').doc(this.getIud()).set(data);
+  }
+  mostrarPrestamo() {
+    return this.db.collection('prestamo').snapshotChanges();
   }
 }

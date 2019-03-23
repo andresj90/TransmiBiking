@@ -11,9 +11,9 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let p of prestamos">
+    <ion-item *ngFor="let p of prestamo">
       <!-- <i-p> </i-p> -->
-      <ion-label>Fecha: {{p.dateReservation}}, duracion: {{p.time}}, origen: {{p.origin}}, retorno: {{p.returnStation}}</ion-label>
+      <ion-label>Fecha: {{p.data.dateReservation}}, origen: {{p.data.origin}}, bikeType: {{p.data.bikeType}} </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
