@@ -12,11 +12,11 @@
 <ion-content>
   <ion-item>
     <ion-label position="stacked">Fecha prestamo</ion-label>
-    <ion-input type="date" [(ngModel)]="reserva.dateReservation"></ion-input>
+    <ion-input type="date" [(ngModel)]="dateReservation"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Lugar prestamo</ion-label>
-    <ion-select multiple="false" placeholder="Seleccione Estaciòn" [(ngModel)]="reserva.originReservation">
+    <ion-select multiple="false" placeholder="Seleccione Estaciòn" [(ngModel)]="origin">
       <ion-select-option value="Station A">Station A</ion-select-option>
       <ion-select-option value="Station B">Station B</ion-select-option>
       <ion-select-option value="Station C">Station C</ion-select-option>
@@ -26,7 +26,7 @@
   </ion-item>
   <ion-item>
     <ion-label position="floating">Tipo bicicleta</ion-label>
-    <ion-select multiple="false" placeholder="Seleccione Tipo Bicicleta" [(ngModel)]="reserva.bykeType">
+    <ion-select multiple="false" placeholder="Seleccione Tipo Bicicleta" [(ngModel)]="bikeType">
       <ion-select-option value="Adulto">Adulto</ion-select-option>
       <ion-select-option value="Niño">Niño</ion-select-option>
     </ion-select>
