@@ -12,15 +12,17 @@ import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
-import { NgxQRCodeModule} from 'ngx-qrcode2';
-import { BarcodeScanner} from '@ionic-native/barcode-scanner/ngx';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Screenshot } from '@ionic-native/screenshot/ngx';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from 'src/environments/environment';
 import { LoginPage } from './login/login.page';
-import {AngularFireAuthModule} from 'angularfire2/auth';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthService } from './servicio/auth.service';
+import { FormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [AppComponent, LoginPage],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -28,7 +30,9 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
     IonicModule.forRoot(),
     AppRoutingModule,
     IonicStorageModule.forRoot(),
-    NgxQRCodeModule
+    NgxQRCodeModule,
+    FormsModule,
+    AngularFireAuthModule
   ],
   providers: [
     StatusBar,
@@ -39,6 +43,7 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
     Camera,
     WebView,
     BarcodeScanner,
+    AuthService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

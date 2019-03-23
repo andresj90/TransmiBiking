@@ -38,6 +38,11 @@ export class AppComponent {
       title: 'News',
       url: '/news',
       icon: 'news'
+    },
+    {
+      title: 'Login',
+      url: '/login',
+      icon: 'Login'
     }
   ];
 

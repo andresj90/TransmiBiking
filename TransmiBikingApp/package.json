@@ -63,7 +63,7 @@
     "firebase": "^5.9.1",
     "ngx-qrcode2": "0.0.9",
     "phonegap-plugin-barcodescanner": "8.0.1",
-    "rxjs": "~6.3.3",
+    "rxjs": "^6.3.3",
     "zone.js": "~0.8.29"
   },
   "devDependencies": {
