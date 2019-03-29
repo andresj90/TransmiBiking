@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   getAuth() {
-    // return this.afAuth.authState.map(auth => auth);
+   // return this.afAuth.authState.map(auth => auth);
   }
 
   logout() {
@@ -38,13 +38,5 @@ export class AuthService {
 
   getIud() {
     return firebase.auth().currentUser.uid;
-  }
-  createPrestamo(data: { dateReservation: String, origin: String, bikeType: String }) {
-    console.log('servicio');
-    // trae iud de usuario login console.log(this.getIud());
-    return this.db.collection('prestamo').doc(this.getIud()).set(data);
-  }
-  mostrarPrestamo() {
-    return this.db.collection('prestamo').snapshotChanges();
   }
 }
