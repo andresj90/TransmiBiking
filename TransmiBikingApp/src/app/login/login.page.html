@@ -11,14 +11,14 @@
 
 <ion-content padding>
   <form (ngSubmit)="onSubmitAddUser()">
-    <ion-item>
+    <ion-item class="login">
       <ion-label floating>Email</ion-label>
-      <ion-input id="email" name="email"  [(ngModel)]="email" type="email"></ion-input>
+      <ion-input id="email" name="email" [(ngModel)]="email" type="email"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item class="login">
       <ion-label floating>Password</ion-label>
-      <ion-input id="password" name="password"  [(ngModel)]="password" type="password"></ion-input>
+      <ion-input id="password" name="password" [(ngModel)]="password" type="password"></ion-input>
     </ion-item>
-    <ion-button primary block type="submit" value="Guardar" [routerLink]="[ '/list']">Sign In</ion-button>
+    <ion-button primary block type="submit" value="Guardar">Sign In</ion-button>
   </form>
 </ion-content>

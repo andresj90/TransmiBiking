@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -36,7 +37,8 @@ import {FlashMessagesService} from 'angular2-flash-messages';
     NgxQRCodeModule,
     FormsModule,
     AngularFireAuthModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    NgbModule.forRoot()
   ],
   providers: [
     StatusBar,

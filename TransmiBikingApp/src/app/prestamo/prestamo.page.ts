@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../servicio/auth.service';
+import { PrestamoService } from '../servicio/prestamo.service';
 @Component({
   selector: 'app-prestamo',
   templateUrl: './prestamo.page.html',
@@ -11,15 +11,15 @@ export class PrestamoPage implements OnInit {
   hours = [2, 3, 4, 5, 6, 7, 8, 9];
   public prestamo = [];
 
-  constructor(public auth: AuthService) { }
-
-  ObtenerPrestamos() {
-
-  }
+  constructor(public prestamoAuth: PrestamoService) { }
 
   ngOnInit() {
+    this.MostrarPrestamo();
+  }
+
+  MostrarPrestamo() {
     // trae todos los comentarios
-    this.auth.mostrarPrestamo().subscribe((prestamo) => {
+    this.prestamoAuth.mostrarPrestamo().subscribe((prestamo) => {
       this.prestamo = [];
       prestamo.forEach((prestamodata: any) => {
         this.prestamo.push({
