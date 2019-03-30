@@ -21,12 +21,14 @@ export class LoginPage implements OnInit {
 
   onSubmitAddUser() {
     console.log('estoy aqui');
-    this.authService.registeruser(this.email, this.password)
+    this.authService.loginEmail(this.email, this.password)
       .then((res) => {
         this.router.navigate(['home']);
-        console.log('pase');
       }).catch((err) => {
         console.log(err);
       });
+  }
+  registro() {
+    this.router.navigate(['form-person']);
   }
 }

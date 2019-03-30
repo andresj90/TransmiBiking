@@ -49,7 +49,7 @@ export class ListPage implements OnInit {
   crearReserva() {
     this.auth.createPrestamo(this.data).then(() => {
     }, (error) => {
-        // alerta
+      // alerta
     });
   }
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
 import * as firebase from 'firebase/app';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +11,8 @@ export class AuthService {
   constructor(
     public afAuth: AngularFireAuth,
     public db: AngularFirestore
-  ) { }
+  ) {
+   }
 
   registeruser(email: string, pass: string) {
     return new Promise((resolve, reject) => {
@@ -29,7 +31,7 @@ export class AuthService {
   }
 
   getAuth() {
-   // return this.afAuth.authState.map(auth => auth);
+    return this.afAuth.authState.subscribe(auth => auth);
   }
 
   logout() {
@@ -39,4 +41,6 @@ export class AuthService {
   getIud() {
     return firebase.auth().currentUser.uid;
   }
+
+
 }
