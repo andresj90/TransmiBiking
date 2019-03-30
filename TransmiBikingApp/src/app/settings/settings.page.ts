@@ -4,6 +4,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 import { Flashlight } from '@ionic-native/flashlight/ngx';
+import { AuthService } from '../servicio/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.page.html',
@@ -18,7 +20,9 @@ export class SettingsPage implements OnInit {
     public camera: Camera,
     public webview: WebView,
     public barcodeScanner: BarcodeScanner,
-    private flashlight: Flashlight
+    private flashlight: Flashlight,
+    public auth: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -59,16 +63,24 @@ export class SettingsPage implements OnInit {
         this.image = this.webview.convertFileSrc(ImageData);
       }, (err) => {
         console.log(err);
-      })
+      });
   }
 
   scanCode() {
     this.barcodeScanner.scan().then(barcodeData => {
       this.scannedCode = barcodeData.text;
-    })
+    });
   }
 
   activateFlashlight() {
     this.flashlight.switchOn();
+  }
+
+  Onsalir() {
+    this.auth.logout().then((res) => {
+      this.router.navigate(['login']);
+    }).catch((err) => {
+      // alerta
+    });
   }
 }

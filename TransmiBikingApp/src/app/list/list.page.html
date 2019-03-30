@@ -9,30 +9,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item>
-    <ion-label position="stacked">Fecha prestamo</ion-label>
-    <ion-input type="date" [(ngModel)]="dateReservation"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Lugar prestamo</ion-label>
-    <ion-select multiple="false" placeholder="Seleccione Estaciòn" [(ngModel)]="origin">
-      <ion-select-option value="Station A">Station A</ion-select-option>
-      <ion-select-option value="Station B">Station B</ion-select-option>
-      <ion-select-option value="Station C">Station C</ion-select-option>
-      <ion-select-option value="Station D">Station D</ion-select-option>
-      <ion-select-option value="Station E">Station E</ion-select-option>
-    </ion-select>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Tipo bicicleta</ion-label>
-    <ion-select multiple="false" placeholder="Seleccione Tipo Bicicleta" [(ngModel)]="bikeType">
-      <ion-select-option value="Adulto">Adulto</ion-select-option>
-      <ion-select-option value="Niño">Niño</ion-select-option>
-    </ion-select>
-  </ion-item>
-  <ion-button color="primary" expand="block" (click)="generateBooking()">
-    Generar Reserva
-  </ion-button>
-  <ion-button color="secondary" expand="block" (click)="displayReservation()">Confirmar Reserva</ion-button>
+<ion-content padding>
+  <form (ngSubmit)="crearReserva()">
+    <ion-item>
+        <ion-label >Fecha prestamo</ion-label>
+        <ion-input name="dateReservation" [(ngModel)]="data.dateReservation"></ion-input>
+      </ion-item>
+    <ion-item>
+    <ion-label >Fecha prestamo</ion-label>
+      <ion-select multiple="false" name="origin" placeholder="Seleccione Estaciòn" [(ngModel)]="data.origin">
+        <ion-select-option value="Station A">Station A</ion-select-option>
+        <ion-select-option value="Station B">Station B</ion-select-option>
+        <ion-select-option value="Station C">Station C</ion-select-option>
+        <ion-select-option value="Station D">Station D</ion-select-option>
+        <ion-select-option value="Station E">Station E</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+    <ion-label >Fecha prestamo</ion-label>
+      <ion-select multiple="false" name="bikeType" placeholder="Seleccione Tipo Bicicleta" [(ngModel)]="data.bikeType">
+        <ion-select-option value="Adulto">Adulto</ion-select-option>
+        <ion-select-option value="Niño">Niño</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button color="primary" expand="block" [routerLink]="[ '/prestamo']">
+      Mostrar Prestamos
+    </ion-button>
+    <ion-button color="secondary" expand="block" type="submit">Confirmar Reserva</ion-button>
+  </form>
 </ion-content>

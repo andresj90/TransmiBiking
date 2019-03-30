@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-center>
+      Information User
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="EnviarDatos()">
+    <div class="form-group">
+      <label for="Input1">Email</label>
+      <input type="email" name="email" class="form-control" id="Input1" placeholder="Email" [(ngModel)]="email">
+    </div>
+    <div class="form-group">
+      <label for="Input2">Password</label>
+      <input type="password" name="password" class="form-control" id="Input2" placeholder="Password" [(ngModel)]="password">
+    </div>
+    <div class="form-group">
+      <label for="Input3">Edad</label>
+      <input type="number"name="edad" class="form-control" id="Input3" placeholder="Edad" [(ngModel)]="informacion.edad">
+    </div>
+    <ion-button primary block type="submit" value="Guardar">Guardar</ion-button>
+  </form>
+</ion-content>

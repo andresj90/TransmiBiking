@@ -21,6 +21,10 @@ import { LoginPage } from './login/login.page';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './servicio/auth.service';
 import { FormsModule } from '@angular/forms';
+import { AngularFirestore } from 'angularfire2/firestore';
+import {FlashMessagesModule} from 'angular2-flash-messages';
+import {FlashMessagesService} from 'angular2-flash-messages';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -32,7 +36,9 @@ import { FormsModule } from '@angular/forms';
     IonicStorageModule.forRoot(),
     NgxQRCodeModule,
     FormsModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FlashMessagesModule,
+    NgbModule.forRoot()
   ],
   providers: [
     StatusBar,
@@ -44,6 +50,8 @@ import { FormsModule } from '@angular/forms';
     WebView,
     BarcodeScanner,
     AuthService,
+    FlashMessagesService,
+    AngularFirestore,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

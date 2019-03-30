@@ -4,21 +4,22 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title text-center>
-      Profile
+      Login
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <form (ngSubmit)="onSubmitAddUser()">
-    <ion-item>
+    <ion-item class="login">
       <ion-label floating>Email</ion-label>
-      <ion-input id="email" name="email"  [(ngModel)]="email" type="email"></ion-input>
+      <ion-input id="email" name="email" [(ngModel)]="email" type="email"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item class="login">
       <ion-label floating>Password</ion-label>
-      <ion-input id="password" name="password"  [(ngModel)]="password" type="password"></ion-input>
+      <ion-input id="password" name="password" [(ngModel)]="password" type="password"></ion-input>
     </ion-item>
     <ion-button primary block type="submit" value="Guardar">Sign In</ion-button>
+    <ion-button primary block (click)="registro()">Registrarse</ion-button>
   </form>
 </ion-content>

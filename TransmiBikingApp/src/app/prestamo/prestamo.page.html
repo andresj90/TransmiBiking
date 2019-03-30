@@ -10,10 +10,22 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let p of prestamos">
-      <!-- <i-p> </i-p> -->
-      <ion-label>Fecha: {{p.dateReservation}}, duracion: {{p.time}}, origen: {{p.origin}}, retorno: {{p.returnStation}}</ion-label>
-    </ion-item>
-  </ion-list>
+  <table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">Numero</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Origin</th>
+        <th scope="col">bikeType</th>
+      </tr>
+    </thead>
+    <tbody  *ngFor="let p of prestamo;let i=index">
+      <tr>
+        <th scope="row">{{i+1}}</th>
+        <td>{{p.data.dateReservation}}</td>
+        <td>{{p.data.origin}}</td>
+        <td>{{p.data.bikeType}}</td>
+      </tr>
+    </tbody>
+  </table>
 </ion-content>

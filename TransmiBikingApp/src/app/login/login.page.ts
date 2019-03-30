@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../servicio/auth.service';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -10,7 +11,8 @@ export class LoginPage implements OnInit {
   public email: string;
   public password: string;
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    private router: Router
   ) {
 
   }
@@ -19,12 +21,14 @@ export class LoginPage implements OnInit {
 
   onSubmitAddUser() {
     console.log('estoy aqui');
-    this.authService.registeruser(this.email, this.password)
+    this.authService.loginEmail(this.email, this.password)
       .then((res) => {
-        console.log('Bien');
-        console.log(res);
+        this.router.navigate(['home']);
       }).catch((err) => {
         console.log(err);
       });
+  }
+  registro() {
+    this.router.navigate(['form-person']);
   }
 }
