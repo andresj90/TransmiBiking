@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyBtawxZvJ594az4v-06zhmBx0faEKdE1mA',
-    authDomain: 'bicicleta-72e57.firebaseapp.com',
-    databaseURL: 'https://bicicleta-72e57.firebaseio.com',
-    projectId: 'bicicleta-72e57',
+    apiKey: 'AIzaSyDsMH2CYpJMsXwbh6wRg-Bp-drmATjPqhk',
+    authDomain: 'softwarebicileta.firebaseapp.com',
+    databaseURL: 'https://softwarebicileta.firebaseio.com',
+    projectId: 'softwarebicileta',
     storageBucket: '',
-    messagingSenderId: '1050466933176'
+    messagingSenderId: '363659830146'
   }
 };
 

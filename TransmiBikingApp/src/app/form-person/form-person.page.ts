@@ -38,7 +38,7 @@ export class FormPersonPage implements OnInit {
     this.auth.registeruser(this.email, this.password)
       .then((res) => {
         this.authService.creardatos(this.informacion).then((ress) => {
-          this.router.navigate(['home']);
+          this.router.navigate(['/home']);
         });
       }).catch((err) => {
         console.log(err);

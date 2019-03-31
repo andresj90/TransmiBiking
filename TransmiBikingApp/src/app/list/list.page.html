@@ -13,7 +13,7 @@
   <form (ngSubmit)="crearReserva()">
     <ion-item>
         <ion-label >Fecha prestamo</ion-label>
-        <ion-input name="dateReservation" [(ngModel)]="data.dateReservation"></ion-input>
+        <ion-input type="date" (onclick)="Calendario()" name="dateReservation" [(ngModel)]="data.dateReservation"></ion-input>
       </ion-item>
     <ion-item>
     <ion-label >Fecha prestamo</ion-label>

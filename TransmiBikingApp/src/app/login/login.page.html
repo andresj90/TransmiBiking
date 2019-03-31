@@ -1,3 +1,4 @@
+	
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -11,15 +12,36 @@
 
 <ion-content padding>
   <form (ngSubmit)="onSubmitAddUser()">
-    <ion-item class="login">
-      <ion-label floating>Email</ion-label>
-      <ion-input id="email" name="email" [(ngModel)]="email" type="email"></ion-input>
-    </ion-item>
-    <ion-item class="login">
-      <ion-label floating>Password</ion-label>
-      <ion-input id="password" name="password" [(ngModel)]="password" type="password"></ion-input>
-    </ion-item>
-    <ion-button primary block type="submit" value="Guardar">Sign In</ion-button>
-    <ion-button primary block (click)="registro()">Registrarse</ion-button>
-  </form>
+    <div class="container">
+      <div class="d-flex justify-content-center h-100">
+        <div class="card">
+          <div class="card-body">
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input id="email" class="form-control" name="email" [(ngModel)]="email" type="email">
+            </div>
+            <div class="input-group form-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <input id="password" class="form-control" name="password" [(ngModel)]="password" type="password">
+            </div>
+            <div class="input-group form-group">
+              <input class="btn float-right login_btn"  type="submit" value="Sign in">
+            </div>
+            <div class="input-group form-group">
+              <input class="btn float-right login_btn"  (click)="registro()" value="Register">
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="d-flex justify-content-center">
+              <a href="#">Forgot your password?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
 </ion-content>

@@ -16,9 +16,9 @@ export class PrestamoService {
 
   createPrestamo(data: { dateReservation: String, origin: String, bikeType: String }) {
     // trae iud de usuario login console.log(this.getIud());
-    return this.db.collection('prestamo').doc(this.auth.getIud()).set(data);
+    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).collection('prestamoBici').doc(this.auth.getIud()).set(data);
   }
   mostrarPrestamo() {
-    return this.db.collection('prestamo').snapshotChanges();
+    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).collection('prestamoBici').snapshotChanges();
   }
 }
