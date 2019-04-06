@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
-
+import { AuthService} from '../servicio/auth.service';
+import { FormPersonService} from '../servicio/form-person.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,18 +10,14 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 })
 export class ProfilePage implements OnInit {
 
-  user = {
-    name: 'Anatolio',
-    lastName: 'Rios',
-    userName: 'toliori22',
-    loans: 7,
-    lastLoan: new Date(2019, 2, 11),
-    profilePic: '/assets/icon/man.svg'
-  }
-
-  constructor(private socialSharing: SocialSharing) { }
+  private userInf: any;
+  constructor(private socialSharing: SocialSharing,
+    private auth: AuthService,
+    public inf: FormPersonService
+    ) { }
 
   ngOnInit() {
+    this.InformacionUsuario();
   }
 
   shareWitheFriends() {
@@ -39,10 +36,27 @@ export class ProfilePage implements OnInit {
     });
   }
 
-  seeMyRides(){
+  seeMyRides() {
     for (let index = 0; index < 20; index++) {
-      let ride = `your ride ${index +1} `;
+      const ride = `your ride ${index + 1 } `;
     }
   }
+
+  InformacionUsuario() {
+    this.userInf = {
+      nombre: '',
+      apellido: '',
+      genero: '',
+      celular: '',
+      edad: ''
+    };
+
+    this.inf.ObtenerInformacion().valueChanges().subscribe((user) => {
+      console.log(this.userInf = user);
+    });
+
+  }
+
+
 
 }

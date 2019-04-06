@@ -12,7 +12,7 @@
 <ion-content padding class="pg">
   <ion-card-header text-center>
     <ion-avatar>
-      <img [src]="user.profilePic">
+      <img>
     </ion-avatar>
   </ion-card-header>
 
@@ -31,19 +31,19 @@
       <ion-col size="9">
         <ion-list>
           <ion-item>
-            <ion-label>Name: {{user.name}}</ion-label>
+            <ion-label>Name: {{userInf.nombre}}</ion-label>
           </ion-item>
           <ion-item>
-            <ion-label>Last Name: {{user.lastName}}</ion-label>
+            <ion-label>Last Name: {{userInf.apellido}}</ion-label>
           </ion-item>
           <ion-item>
-            <ion-label>Username: {{user.userName}}</ion-label>
+            <ion-label>edad: {{userInf.edad}}</ion-label>
           </ion-item>
           <ion-item>
-            <ion-label>Loans: {{user.loans}}</ion-label>
+            <ion-label>celular: {{userInf.celular}}</ion-label>
           </ion-item>
           <ion-item>
-            <ion-label>Last Loan: {{user.lastLoan}}</ion-label>
+            <ion-label>genero: {{userInf.genero}}</ion-label>
           </ion-item>
         </ion-list>
       </ion-col>
