@@ -14,8 +14,10 @@ export class FormPersonService {
     public auth: AuthService
   ) { }
 
-  creardatos(informacion: any): any {
+  creardatos(informacion: {nombre: string, apellido: string, genero: number, celular: string , edad: number}) {
     return this.db.collection('informacionUsuario').doc(this.auth.getIud()).set(informacion);
   }
-
+  ObtenerInformacion() {
+    return this.db.collection('informacionUsuario').doc(this.auth.getIud());
+  }
 }

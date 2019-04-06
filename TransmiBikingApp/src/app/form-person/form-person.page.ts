@@ -3,7 +3,6 @@ import { FormPersonService } from '../servicio/form-person.service';
 import { AuthService } from '../servicio/auth.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-form-person',
   templateUrl: './form-person.page.html',
@@ -44,4 +43,6 @@ export class FormPersonPage implements OnInit {
         console.log(err);
       });
   }
+
+
 }
