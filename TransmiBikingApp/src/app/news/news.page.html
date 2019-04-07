@@ -9,6 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-<firebase-ui></firebase-ui>
+<ion-content>
+  <firebase-ui></firebase-ui>
+  <h1 *ngIf="afAuth.auth.currentUser">Welcome {{afAuth.auth.currentUser.displayName}}</h1>
 </ion-content>

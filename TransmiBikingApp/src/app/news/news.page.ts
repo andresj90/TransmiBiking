@@ -1,3 +1,4 @@
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,16 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsPage implements OnInit {
 
-  user = {
-    name: 'Anatolio',
-    lastName: 'Rios', 
-    userName: 'toliori22',
-    loans: 7,
-    lastLoan: new Date(2019,2,11),
-    profilePic: '/assets/icon/man.svg'
-  }
+  constructor(public afAuth: AngularFireAuth) {
 
-  constructor() { }
+   }
 
   ngOnInit() {
   }
