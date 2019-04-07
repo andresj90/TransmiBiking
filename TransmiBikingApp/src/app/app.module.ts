@@ -25,6 +25,20 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
+
+
+
+const firebaseUiAuthConfig: firebaseui.auth.Config = {
+  signInFlow: 'popup',
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID
+  ],
+  tosUrl: '/terms',
+  privacyPolicyUrl: '/privacy',
+  credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM
+};
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -38,7 +52,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     AngularFireAuthModule,
     FlashMessagesModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
   ],
   providers: [
     StatusBar,

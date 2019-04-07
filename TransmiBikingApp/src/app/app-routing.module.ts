@@ -42,7 +42,9 @@ const routes: Routes = [
   {
     path: 'form-person',
     loadChildren: './form-person/form-person.module#FormPersonPageModule'
-  }
+  },  { path: 'terms', loadChildren: './terms/terms.module#TermsPageModule' },
+  { path: 'privacy', loadChildren: './privacy/privacy.module#PrivacyPageModule' }
+
 
 
 

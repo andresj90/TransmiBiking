@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+
 import { IonicModule } from '@ionic/angular';
-import { NewsPage } from './news.page';
-import { FirebaseUIModule } from 'firebaseui-angular';
+
+import { PrivacyPage } from './privacy.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: NewsPage
+    component: PrivacyPage
   }
 ];
 
@@ -18,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    FirebaseUIModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [NewsPage]
+  declarations: [PrivacyPage]
 })
-export class NewsPageModule {}
+export class PrivacyPageModule {}
