@@ -25,6 +25,7 @@ export class FormPersonPage implements OnInit {
 
   CrearInformacionUsuario() {
     this.informacion = {
+      id: '',
       nombre: '',
       apellido: '',
       genero: '',
@@ -37,7 +38,6 @@ export class FormPersonPage implements OnInit {
     this.auth.registeruser(this.email, this.password)
       .then((res) => {
         this.authService.creardatos(this.informacion).then((ress) => {
-          this.router.navigate(['/home']);
         });
       }).catch((err) => {
         console.log(err);
