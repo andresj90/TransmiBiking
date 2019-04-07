@@ -11,5 +11,7 @@
 
 <ion-content>
   <firebase-ui></firebase-ui>
-  <h1 *ngIf="afAuth.auth.currentUser">Welcome {{afAuth.auth.currentUser.displayName}}</h1>
+  <!-- Since the afAuth object is left public in the contructor we can call it here -->
+  <h1 *ngIf="afAuth.auth.currentUser">Welcome {{afAuth.auth.currentUser.uid}}</h1>
+  <ion-button *ngIf="afAuth.auth.currentUser" (click)="logOut()">Sign out</ion-button>
 </ion-content>
