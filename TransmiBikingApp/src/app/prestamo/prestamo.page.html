@@ -10,22 +10,24 @@
 </ion-header>
 
 <ion-content padding>
-  <table class="table" >
-    <thead>
+  <p-table [value]="stations">
+    <ng-template pTemplate="header">
       <tr>
-        <th scope="col">Numero</th>
-        <th scope="col">Fecha</th>
-        <th scope="col">Origin</th>
-        <th scope="col">bikeType</th>
+        <th >Numero</th>
+        <th >Fecha</th>
+        <th >Origin</th>
+        <th>bikeType</th>
       </tr>
-    </thead>
-    <tbody  *ngFor="let p of prestamo;let i=index">
+    </ng-template>
+      
+    
+    <ng-template pTemplate="body" >
       <tr>
-        <th scope="row">{{i+1}}</th>
-        <td>{{p.data.dateReservation}}</td>
-        <td>{{p.data.origin}}</td>
-        <td>{{p.data.bikeType}}</td>
+        <td>{{stations}}</td>
+        <td>hola</td>
+        <td>hola</td>
+        <td>jijii</td>
       </tr>
-    </tbody>
-  </table>
+    </ng-template>
+  </p-table>
 </ion-content>

@@ -4,7 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { PrestamoPage } from './prestamo.page';
-
+import { TableModule} from 'primeng/table';
+import {AccordionModule} from 'primeng/accordion';
+import {MenuItem} from 'primeng/api';
 const routes: Routes = [
   {
     path: '',
@@ -19,6 +21,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    TableModule,
+    AccordionModule,
     RouterModule.forChild(routes)
   ],
   declarations: [PrestamoPage]

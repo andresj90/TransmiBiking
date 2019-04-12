@@ -26,7 +26,8 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import {FlashMessagesService} from 'angular2-flash-messages';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
-
+import { TableModule} from 'primeng/table';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -53,7 +54,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireAuthModule,
     FlashMessagesModule,
     NgbModule.forRoot(),
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    TableModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     StatusBar,
