@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content padding>
-  <p-table [value]="stations">
+  <p-table  [value]="stations" [paginator]="true" [rows]="10">
     <ng-template pTemplate="header">
       <tr>
         <th *ngFor="let col of colum">
@@ -20,7 +20,7 @@
     </ng-template>
       
     
-    <ng-template pTemplate="body" let-stations>
+    <ng-template pTemplate="body" let-rowData let-stations>
       <tr>
         <td *ngFor="let col of colum">
           {{stations}}

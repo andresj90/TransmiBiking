@@ -16,7 +16,7 @@ export class AppComponent {
     },
     {
       title: 'Get a bike',
-      url: '/list',
+      url: '/prestamo',
       icon: 'calendar'
     },
     {

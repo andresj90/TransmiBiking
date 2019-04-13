@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  },
-  {
     path: 'ubicacion',
     loadChildren: './ubicacion/ubicacion.module#UbicacionPageModule'
   },
@@ -41,14 +37,8 @@ const routes: Routes = [
   },
   { path: 'terms', loadChildren: './terms/terms.module#TermsPageModule' },
   { path: 'privacy', loadChildren: './privacy/privacy.module#PrivacyPageModule' },
-  { path: 'lista-prestamos', loadChildren: './lista-prestamos/lista-prestamos.module#ListaPrestamosPageModule' }
-
-
-
-
-
-
-
+  { path: 'lista-prestamos', loadChildren: './lista-prestamos/lista-prestamos.module#ListaPrestamosPageModule' },
+  { path: 'prestamo', loadChildren: './prestamo/prestamo.module#PrestamoPageModule' }
 
 ];
 

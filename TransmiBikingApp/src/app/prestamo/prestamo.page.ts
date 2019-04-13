@@ -4,11 +4,11 @@ import { PrestamoService } from '../servicio/prestamo.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 @Component({
-  selector: 'app-list',
-  templateUrl: 'list.page.html',
-  styleUrls: ['list.page.scss']
+  selector: 'app-prestamo',
+  templateUrl: './prestamo.page.html',
+  styleUrls: ['./prestamo.page.scss'],
 })
-export class ListPage implements OnInit {
+export class PrestamoPage implements OnInit {
   data: any;
 
   constructor(private nativeStorage: NativeStorage,
@@ -20,32 +20,15 @@ export class ListPage implements OnInit {
     this.DatosReserva();
   }
 
-  /*  generateBooking() {
-      window.alert(`Se ha generado una reserva para ${this.dateReservation}
-      con origen en ${this.origin} y tipo de bicicleta para ${this.bikeType}`);
-      this.nativeStorage.setItem('reserva', { reserva: this.dateReservation })
-        .then(
-          () => console.log('Stored item!'),
-          error => console.error('Error storing item', error)
-        );
-    }
-    displayReservation() {
-      this.nativeStorage.getItem('reserva')
-        .then(
-          data => console.log(data),
-          error => console.error(error)
-        );
-    }*/
   ngOnInit() {
   }
 
   DatosReserva() {
     this.data = {
+      fecha: '',
       dateReservation: '',
       origin: '',
-      bikeType: '',
-      returnStation: '',
-      time: ''
+      bikeType: ''
     };
   }
 
