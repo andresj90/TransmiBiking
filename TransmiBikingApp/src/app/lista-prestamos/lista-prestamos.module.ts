@@ -3,28 +3,25 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { PrestamoPage } from './prestamo.page';
-import { TableModule} from 'primeng/table';
+import { ListaPrestamosPage } from './lista-prestamos.page';
+import {TableModule} from 'primeng/table';
 import {AccordionModule} from 'primeng/accordion';
 import {MenuItem} from 'primeng/api';
 const routes: Routes = [
   {
     path: '',
-    component: PrestamoPage
+    component: ListaPrestamosPage
   }
 ];
 
-
-
 @NgModule({
   imports: [
+    TableModule,
     CommonModule,
     FormsModule,
     IonicModule,
-    TableModule,
-    AccordionModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PrestamoPage]
+  declarations: [ListaPrestamosPage]
 })
-export class PrestamoPageModule {}
+export class ListaPrestamosPageModule {}

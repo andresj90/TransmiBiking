@@ -14,11 +14,18 @@ export class PrestamoService {
     public auth: AuthService
   ) { }
 
-  createPrestamo(data: { dateReservation: String, origin: String, bikeType: String }) {
+  createPrestamo(data: { Fecha: Date, dateReservation: String, origin: String, bikeType: String }) {
     // trae iud de usuario login console.log(this.getIud());
-    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).collection('prestamoBici').doc(this.auth.getIud()).set(data);
+    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).collection('ListprestamoBici').add(data);
   }
-  mostrarPrestamo() {
-    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).collection('prestamoBici').snapshotChanges();
+  ObtenerPrestamos() {
+    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).collection('ListprestamoBici').snapshotChanges();
   }
+  ActualizarPrestamo(id, data) {
+    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).collection('ListprestamoBici').doc(id).set(data);
+  }
+  ObtenerPrestamo(id) {
+    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).collection('ListprestamoBici').doc(id).snapshotChanges();
+  }
+
 }

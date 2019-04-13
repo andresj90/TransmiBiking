@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: './profile/profile.module#ProfilePageModule'
   },
   {
-    path: 'prestamo',
-    loadChildren: './prestamo/prestamo.module#PrestamoPageModule'
-  },
-  {
     path: 'settings',
     loadChildren: './settings/settings.module#SettingsPageModule'
   },
@@ -42,8 +38,11 @@ const routes: Routes = [
   {
     path: 'form-person',
     loadChildren: './form-person/form-person.module#FormPersonPageModule'
-  },  { path: 'terms', loadChildren: './terms/terms.module#TermsPageModule' },
-  { path: 'privacy', loadChildren: './privacy/privacy.module#PrivacyPageModule' }
+  },
+  { path: 'terms', loadChildren: './terms/terms.module#TermsPageModule' },
+  { path: 'privacy', loadChildren: './privacy/privacy.module#PrivacyPageModule' },
+  { path: 'lista-prestamos', loadChildren: './lista-prestamos/lista-prestamos.module#ListaPrestamosPageModule' }
+
 
 
 

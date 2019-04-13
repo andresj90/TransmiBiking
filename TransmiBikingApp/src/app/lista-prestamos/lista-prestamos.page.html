@@ -13,20 +13,18 @@
   <p-table [value]="stations">
     <ng-template pTemplate="header">
       <tr>
-        <th >Numero</th>
-        <th >Fecha</th>
-        <th >Origin</th>
-        <th>bikeType</th>
+        <th *ngFor="let col of colum">
+            {{col.header}}
+        </th>
       </tr>
     </ng-template>
       
     
-    <ng-template pTemplate="body" >
+    <ng-template pTemplate="body" let-stations>
       <tr>
-        <td>{{stations}}</td>
-        <td>hola</td>
-        <td>hola</td>
-        <td>jijii</td>
+        <td *ngFor="let col of colum">
+          {{stations}}
+        </td>
       </tr>
     </ng-template>
   </p-table>
