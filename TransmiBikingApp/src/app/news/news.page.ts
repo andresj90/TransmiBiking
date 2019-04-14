@@ -24,6 +24,7 @@ export class NewsPage implements OnInit {
     });
   }
 
+createContact() {
 let contact: Contact = this.contacts.create();
 
 contact.name = new ContactName(null, 'Smith', 'John');
@@ -32,5 +33,7 @@ contact.save().then(
   () => console.log('Contact saved!', contact),
   (error: any) => console.error('Error saving contact.', error)
 );
+
+}
 
 }
