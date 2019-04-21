@@ -10,7 +10,7 @@ import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/cont
 })
 export class NewsPage implements OnInit {
 
-   /* AngularFireAuth is a service that provides various methods to manipulate the database and the data */ 
+   /* AngularFireAuth is a service that provides various methods to manipulate the database and the data */
   constructor(public afAuth: AngularFireAuth,
   private contacts: Contacts) {
 
@@ -20,12 +20,12 @@ export class NewsPage implements OnInit {
 
   logOut() {
     this.afAuth.auth.signOut().then(() => {
-       console.log("Usted ha salido");
+       console.log('Usted ha salido ');
     });
   }
 
 createContact() {
-let contact: Contact = this.contacts.create();
+const contact: Contact = this.contacts.create();
 
 contact.name = new ContactName(null, 'Smith', 'John');
 contact.phoneNumbers = [new ContactField('mobile', '6471234567')];

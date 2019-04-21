@@ -58,9 +58,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     TableModule,
     BrowserAnimationsModule,
-    Contacts, 
-    Contact, 
-    ContactField, 
+    Contacts,
+    Contact,
+    ContactField,
     ContactName
   ],
   providers: [
