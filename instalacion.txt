@@ -1,0 +1,8 @@
+https://www.primefaces.org/primeng/#/setup
+
+
+npm install --save @angular/material @angular/cdk
+npm install primeng --save
+npm install primeicons --save
+npm install @angular/animations --save
+gsutil defacl ch -u AllUsers:R gs://proyectolibro-b0994.appspot.com
