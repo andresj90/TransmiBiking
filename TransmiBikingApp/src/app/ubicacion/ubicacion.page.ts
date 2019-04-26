@@ -3,6 +3,7 @@ import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, CameraPosition, MarkerOptions, Marker } from '@ionic-native/google-maps';
 import { NavController, Platform } from '@ionic/angular';
 import { google } from './google';
+import {} from ''
 
 @Component({
   selector: 'app-ubicacion',
