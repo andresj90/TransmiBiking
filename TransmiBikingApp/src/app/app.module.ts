@@ -28,6 +28,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
 import { TableModule} from 'primeng/table';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {PanelModule} from 'primeng/panel';
+import {DialogModule} from 'primeng/dialog';
 // import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
 
 
@@ -57,6 +59,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     NgbModule.forRoot(),
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     TableModule,
+    PanelModule,
+    DialogModule,
     BrowserAnimationsModule
   ],
   providers: [

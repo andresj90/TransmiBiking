@@ -26,9 +26,9 @@ export class PrestamoPage implements OnInit {
   DatosReserva() {
     this.data = {
       fecha: '',
-      dateReservation: '',
-      origin: '',
-      bikeType: ''
+      ruta: '',
+      adulto: '',
+      nino: ''
     };
   }
 
