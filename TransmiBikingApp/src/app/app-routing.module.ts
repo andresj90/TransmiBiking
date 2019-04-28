@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   {
-    path: 'ubicacion',
-    loadChildren: './ubicacion/ubicacion.module#UbicacionPageModule'
-  },
-  {
     path: 'profile',
     loadChildren: './profile/profile.module#ProfilePageModule'
   },

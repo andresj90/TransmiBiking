@@ -6,8 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PrestamoPage } from './prestamo.page';
-import {PanelModule} from 'primeng/panel';
-import {DialogModule} from 'primeng/dialog';
+import { PanelModule } from 'primeng/panel';
+import { DialogModule } from 'primeng/dialog';
 const routes: Routes = [
   {
     path: '',
@@ -26,4 +26,4 @@ const routes: Routes = [
   ],
   declarations: [PrestamoPage]
 })
-export class PrestamoPageModule {}
+export class PrestamoPageModule { }
