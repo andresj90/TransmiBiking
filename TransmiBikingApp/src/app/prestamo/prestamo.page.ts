@@ -15,7 +15,7 @@ export class PrestamoPage implements OnInit {
     public auth: PrestamoService,
     public flashMensaje: FlashMessagesService,
     private datePicker: DatePicker
-    ) {
+  ) {
 
     this.DatosReserva();
   }
@@ -26,9 +26,9 @@ export class PrestamoPage implements OnInit {
   DatosReserva() {
     this.data = {
       fecha: '',
-      dateReservation: '',
-      origin: '',
-      bikeType: ''
+      ruta: '',
+      adulto: '',
+      nino: ''
     };
   }
 
