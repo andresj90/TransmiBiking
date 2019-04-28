@@ -22,11 +22,13 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './servicio/auth.service';
 import { FormsModule } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
-import {FlashMessagesModule} from 'angular2-flash-messages';
-import {FlashMessagesService} from 'angular2-flash-messages';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { FlashMessagesService } from 'angular2-flash-messages';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableModule} from 'primeng/table';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PanelModule } from 'primeng/panel';
+import { DialogModule } from 'primeng/dialog';
 // import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
 
 //services 
@@ -52,6 +54,8 @@ import {CarouselModule} from 'primeng/carousel';
     NgbModule.forRoot(),
     TableModule,
     CarouselModule,
+    PanelModule,
+    DialogModule,
     BrowserAnimationsModule
   ],
   providers: [

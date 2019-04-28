@@ -14,10 +14,6 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   {
-    path: 'ubicacion',
-    loadChildren: './ubicacion/ubicacion.module#UbicacionPageModule'
-  },
-  {
     path: 'profile',
     loadChildren: './profile/profile.module#ProfilePageModule',
     canActivate: [AuthGuardService]
@@ -26,6 +22,7 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: './settings/settings.module#SettingsPageModule'
   },
+
   {
     path: 'login',
     loadChildren: './login/login.module#LoginPageModule'
@@ -52,11 +49,10 @@ const routes: Routes = [
     loadChildren: './prestamo/prestamo.module#PrestamoPageModule',
     canActivate: [AuthGuardService]
   },
+  { path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' },
   { path: 'evento', 
   loadChildren: './evento/evento.module#EventoPageModule' 
   }
-
-
 ];
 
 @NgModule({
@@ -64,3 +60,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
