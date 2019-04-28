@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <p-carousel [value]="cars">
+    <ng-template let-car pTemplate="car">
+      {{car.vin}}
+    </ng-template>
+  </p-carousel>
+</ion-content>

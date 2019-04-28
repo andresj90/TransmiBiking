@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import {CarouselModule} from 'primeng/carousel';
 import { IonicModule } from '@ionic/angular';
-import { NewsPage } from './news.page';
-import { FirebaseUIModule } from 'firebaseui-angular';
+
+import { EventoPage } from './evento.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: NewsPage
+    component: EventoPage
   }
 ];
 
@@ -18,9 +19,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    FirebaseUIModule,
+    CarouselModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [NewsPage]
+  declarations: [EventoPage]
 })
-export class NewsPageModule {}
+export class EventoPageModule {}

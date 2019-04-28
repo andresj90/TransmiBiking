@@ -27,10 +27,6 @@ const routes: Routes = [
     loadChildren: './settings/settings.module#SettingsPageModule'
   },
   {
-    path: 'news',
-    loadChildren: './news/news.module#NewsPageModule'
-  },
-  {
     path: 'login',
     loadChildren: './login/login.module#LoginPageModule'
   },
@@ -55,7 +51,11 @@ const routes: Routes = [
     path: 'prestamo',
     loadChildren: './prestamo/prestamo.module#PrestamoPageModule',
     canActivate: [AuthGuardService]
+  },
+  { path: 'evento', 
+  loadChildren: './evento/evento.module#EventoPageModule' 
   }
+
 
 ];
 
