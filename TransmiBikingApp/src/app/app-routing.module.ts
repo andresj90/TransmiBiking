@@ -1,5 +1,7 @@
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {  AuthGuardService  } from "./servicio/auth.guard";
 
 const routes: Routes = [
   {
@@ -17,7 +19,8 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: './profile/profile.module#ProfilePageModule'
+    loadChildren: './profile/profile.module#ProfilePageModule',
+    canActivate: [AuthGuardService]
   },
   {
     path: 'settings',
@@ -35,10 +38,24 @@ const routes: Routes = [
     path: 'form-person',
     loadChildren: './form-person/form-person.module#FormPersonPageModule'
   },
-  { path: 'terms', loadChildren: './terms/terms.module#TermsPageModule' },
-  { path: 'privacy', loadChildren: './privacy/privacy.module#PrivacyPageModule' },
-  { path: 'lista-prestamos', loadChildren: './lista-prestamos/lista-prestamos.module#ListaPrestamosPageModule' },
-  { path: 'prestamo', loadChildren: './prestamo/prestamo.module#PrestamoPageModule' }
+  {
+    path: 'terms',
+    loadChildren: './terms/terms.module#TermsPageModule'
+  },
+  {
+    path: 'privacy',
+    loadChildren: './privacy/privacy.module#PrivacyPageModule'
+  },
+  {
+    path: 'lista-prestamos',
+    loadChildren: './lista-prestamos/lista-prestamos.module#ListaPrestamosPageModule',
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'prestamo',
+    loadChildren: './prestamo/prestamo.module#PrestamoPageModule',
+    canActivate: [AuthGuardService]
+  }
 
 ];
 

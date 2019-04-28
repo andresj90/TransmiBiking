@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
-import { AuthService} from '../servicio/auth.service';
-import { FormPersonService} from '../servicio/form-person.service';
+import { AuthService } from '../servicio/auth.service';
+import { FormPersonService } from '../servicio/form-person.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,11 +10,11 @@ import { FormPersonService} from '../servicio/form-person.service';
 })
 export class ProfilePage implements OnInit {
 
-  private userInf: any;
+  public userInf: any;
   constructor(private socialSharing: SocialSharing,
     private auth: AuthService,
     public inf: FormPersonService
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.InformacionUsuario();
@@ -38,7 +38,7 @@ export class ProfilePage implements OnInit {
 
   seeMyRides() {
     for (let index = 0; index < 20; index++) {
-      const ride = `your ride ${index + 1 } `;
+      const ride = `your ride ${index + 1} `;
     }
   }
 
@@ -51,7 +51,7 @@ export class ProfilePage implements OnInit {
       edad: ''
     };
 
-    this.inf.ObtenerInformacion().valueChanges().subscribe((user) => {
+    this.inf.ObtenerInformacion().subscribe((user) => {
       this.userInf = user;
     });
 

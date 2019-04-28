@@ -3,7 +3,6 @@ import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, CameraPosition, MarkerOptions, Marker } from '@ionic-native/google-maps';
 import { NavController, Platform } from '@ionic/angular';
 import { google } from './google';
-import {} from ''
 
 @Component({
   selector: 'app-ubicacion',
@@ -24,6 +23,7 @@ export class UbicacionPage implements OnInit {
               public navCtrl: NavController,
               private googlemaps: GoogleMaps) {
     this.directionsService = new google.maps.DirectionsService();
+    console.log(this.directionsService);
     this.directionsDisplay = new google.maps.DirectionsRenderer();
     this.bounds = new google.maps.LatLngBounds();
     this.waypoints = [

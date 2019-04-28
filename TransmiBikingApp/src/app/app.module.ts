@@ -30,6 +30,10 @@ import { TableModule} from 'primeng/table';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
 
+//services 
+import {  AuthGuardService  } from "./servicio/auth.guard";
+
+
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -71,6 +75,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AuthService,
     FlashMessagesService,
     AngularFirestore,
+    AuthGuardService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
