@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+// tslint:disable-next-line:quotemark
 import {  AuthGuardService  } from "./servicio/auth.guard";
 
 const routes: Routes = [
@@ -51,7 +52,8 @@ const routes: Routes = [
     path: 'prestamo',
     loadChildren: './prestamo/prestamo.module#PrestamoPageModule',
     canActivate: [AuthGuardService]
-  }
+  },  { path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' }
+
 
 ];
 
