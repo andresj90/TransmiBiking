@@ -1,3 +1,8 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -10,53 +15,61 @@
 </ion-header>
 
 <ion-content padding class="pg">
-  <ion-card-header text-center>
-    <ion-avatar>
-      <img>
-    </ion-avatar>
-  </ion-card-header>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col size="1">
-        <div>
+  <div class="container" >
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border-radius: 16px;">
+            <div class="well profile col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <figure>
+                  <img src="{{userInf.url}}" alt="" class="img-circle" style="width:75px;" id="user-img">
+                </figure>
+                <label>Nombre: </label>
+                <h5 style="text-align:center;"><strong id="user-name">{{userInf.nombre}} {{userInf.apellido}}</strong>
+                </h5>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 divider text-center"></div>
+                <label>Correo: </label>
+                <p style="text-align:center;font-size: smaller;overflow-wrap: break-word;" id="user-email">
+                  {{userInf.email}} </p>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 divider text-center"></div>
+                <label>Edad: </label>
+                <p style="text-align:center;font-size: smaller;overflow-wrap: break-word;" id="user-email">
+                  {{userInf.edad}} </p>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 divider text-center"></div>
+                <label>Genero: </label>
+                <p style="text-align:center;font-size: smaller;overflow-wrap: break-word;" id="user-email">
+                  {{userInf.genero}} </p>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 divider text-center"></div>
+                <label>Genero: </label>
+                <p style="text-align:center;font-size: smaller;overflow-wrap: break-word;" id="user-email">
+                  {{userInf.celular}} </p>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 divider text-center"></div>
+                <div class="col-xs-6" >
+                  <button class="btn btn-primary" [disabled]="cambio"
+                      (click)="onUsuario(userInf)">Editar
+                      Informacion</button>
+                  </div>
+                <div class=" col-lg-6 left" style="text-align:center;overflow-wrap: break-word;">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </ion-col>
-      <ion-col size="10">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="1">
-      </ion-col>
-      <ion-col size="9">
-        <ion-list>
-          <ion-item>
-            <ion-label>Name: {{userInf.nombre}}</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>Last Name: {{userInf.apellido}}</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>edad: {{userInf.edad}}</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>celular: {{userInf.celular}}</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>genero: {{userInf.genero}}</ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <!--
-    <ion-button (click)="shareWithFriends()">
-    <ion-icon slot="start" name="logo-facebook"></ion-icon>
-    Share profile details
-  </ion-button>
-  <ion-button (click)="seeMyRides()">
-    see my rides
-  </ion-button>
-  -->
-
+      </div>
+    </div>
+  </div>
+  <p-dialog header="Editar informacion" [(visible)]="display" [modal]="true" [responsive]="true"
+        [style]="{width: '100%', minWidth: '200px', heigth: '100%'}" [maximizable]="true"
+        [baseZIndex]="10000000">
+        <div class="col-md-12">
+            <div class="col-xs-12">
+                <button style="margin: 10px;" class="form-control"
+                    class="btn btn-primary">Guardar</button>
+                <div></div>
+            </div>
+       </div>
+    </p-dialog>
 </ion-content>
