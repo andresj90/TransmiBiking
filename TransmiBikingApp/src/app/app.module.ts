@@ -38,7 +38,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {CarouselModule} from 'primeng/carousel';
-
+import { ValidationService } from './servicio/validation.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -77,6 +77,7 @@ import {CarouselModule} from 'primeng/carousel';
     FlashMessagesService,
     AngularFirestore,
     AuthGuardService,
+    ValidationService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -11,14 +11,14 @@
 
 <ion-content id="n">
   <p-panel header="Prestamo de Bicicletas">
-    <form (ngSubmit)="crearReserva()">
+    <form (ngSubmit)="crearReserva()" >
       <ion-item>
-        <ion-input type="date" (click)="Calendario()" name="fecha" [(ngModel)]="data.fecha">
+        <ion-input type="date" (click)="Calendario()" name="fecha" [(ngModel)]="data.fecha" required>
         </ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Ruta</ion-label>
-        <ion-select multiple="false" name="ruta" placeholder="Seleccione Estaciòn" [(ngModel)]="data.ruta">
+        <ion-select multiple="false" name="ruta" placeholder="Seleccione Estaciòn" [(ngModel)]="data.ruta" required>
           <ion-select-option value="Station A">Station A</ion-select-option>
         </ion-select>
       </ion-item>
