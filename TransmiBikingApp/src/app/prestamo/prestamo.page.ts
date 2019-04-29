@@ -35,11 +35,11 @@ export class PrestamoPage implements OnInit {
 
   crearReserva() {
     if (!this.validation.validarCamposTextoPrestamos(this.data.fecha, this.data.ruta)) {
-      console.log('Todos los campos deben contener datos')
+      console.log('Todos los campos deben contener datos');
       // this.flashMensaje.show('Todos los campos deben contener datos', {cssClass: 'alert-danger', timeout: 5000});
-    }else if(!this.validation.validarCamposNumericosPrestano(this.data.adulto, this.data.nino)){
+    } else if (!this.validation.validarCamposNumericosPrestano(this.data.adulto, this.data.nino)) {
       this.flashMensaje.show('Se debe solicitar almenos 1 bicicleta', {cssClass: 'alert-danger', timeout: 5000});
-    }else{
+    } else {
       this.auth.createPrestamo(this.data).then(() => {
         this.flashMensaje.show('Prestamo procesado', {cssClass: 'alert-success', timeout: 5000});
       }, (error) => {

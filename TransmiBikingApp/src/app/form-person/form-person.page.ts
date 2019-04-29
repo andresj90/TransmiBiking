@@ -15,7 +15,7 @@ import { AngularFireStorage } from 'angularfire2/storage';
 export class FormPersonPage implements OnInit {
   private informacion: any;
   public email: string;
-  public password: string;
+  private password: string;
   uploadPercent: Observable<number>;
   urlImage: Observable<string>;
   foto: any;
@@ -33,7 +33,6 @@ export class FormPersonPage implements OnInit {
 
   CrearInformacionUsuario() {
     this.informacion = {
-      id: '',
       nombre: '',
       apellido: '',
       genero: '',
