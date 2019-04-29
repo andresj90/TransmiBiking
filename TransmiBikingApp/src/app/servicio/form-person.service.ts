@@ -14,13 +14,13 @@ export class FormPersonService {
     public auth: AuthService
   ) { }
 
-  creardatos(informacion: { nombre: string, apellido: string, genero: string, celular: string, edad: number }) {
+  creardatos(informacion: { nombre: string, apellido: string, genero: string, celular: string, edad: number, url: string, email: string }) {
     return this.db.collection('informacionUsuario').doc(this.auth.getIud()).set(informacion);
   }
   UpdateDatos(datos: any) {
     return this.db.collection('informacionusuario').doc(this.auth.getIud()).set(datos);
   }
   ObtenerInformacion() {
-    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).snapshotChanges();
+    return this.db.collection('informacionUsuario').doc(this.auth.getIud());
   }
 }

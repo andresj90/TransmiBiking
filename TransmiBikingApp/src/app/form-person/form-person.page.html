@@ -14,7 +14,7 @@
   <form (ngSubmit)="EnviarDatos()" >
     <div class="form-group">
       <label for="Input1">Email</label>
-      <input type="email" name="email" class="form-control" id="Input1" placeholder="Email" [(ngModel)]="email">
+      <input type="email" name="email" class="form-control" id="Input1" placeholder="Email" [(ngModel)]="email" [(ngModel)]="informacion.email" >
     </div>
     <div class="form-group">
       <label for="Input2">Password</label>
@@ -22,24 +22,43 @@
     </div>
     <div class="form-group">
       <label for="Input4">Nombre</label>
-      <input type="text" name="Nombre" class="form-control" id="Input4" placeholder="Nombre" [(ngModel)]="informacion.nombre">
+      <input type="text" name="Nombre" class="form-control" id="Input4" placeholder="Nombre" [(ngModel)]="informacion.nombre" required>
     </div>
     <div class="form-group">
       <label for="Input5">Apellido</label>
-      <input type="text" name="edad" class="form-control" id="Input5" placeholder="Apellido" [(ngModel)]="informacion.apellido">
+      <input type="text" name="edad" class="form-control" min="10" id="Input5" placeholder="Apellido" [(ngModel)]="informacion.apellido" required>
     </div>
-    <div class="form-group">
-      <label for="Input6">Género</label>
-      <input type="text" name="Género" class="form-control" id="Input6" placeholder="Género" [(ngModel)]="informacion.genero">
+    <div class="form-group">  
+    <label for="sel1">
+     Género:
+    </label>
+    <select class="form-control" id="sel1" [(ngModel)]="informacion.genero" aria-placeholder="Genero">
+      <option value="">Genero</option>
+      <option>Masculino</option>
+      <option>Femenino</option>
+      <option>Indefinido</option>
+    </select>
     </div>
     <div class="form-group">
       <label for="Input7">Celular</label>
-      <input type="text"name="Celular" class="form-control" id="Input7" placeholder="Celular" [(ngModel)]="informacion.celular">
+      <input type="number"name="Celular" class="form-control" id="Input7" placeholder="Celular" [(ngModel)]="informacion.celular" required>
     </div>
     <div class="form-group">
       <label for="Input8">Edad</label>
-      <input type="number"name="edad" class="form-control" id="Input8" placeholder="Edad" [(ngModel)]="informacion.edad">
+      <input type="number"name="edad" class="form-control" id="Input8" placeholder="Edad" [(ngModel)]="informacion.edad" required>
     </div>
+    <div>
+    <label> Subir imagen</label>
+      <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+    </div>
+    <hr>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-success" role="progressbar" 
+      [style.width]="(uploadPercent | async) + '%'">
+
+      </div>
+    </div>
+    <input #imageUser type="text" class="from-control" value="{{urlImage | async}}" style="display:none;" >
     <ion-button primary block type="submit" value="Guardar">Guardar</ion-button>
   </form>
   </p-panel>

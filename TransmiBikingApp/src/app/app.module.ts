@@ -32,10 +32,12 @@ import { PanelModule } from 'primeng/panel';
 import { DialogModule } from 'primeng/dialog';
 // import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
 
-//services 
+// services
+// tslint:disable-next-line:quotemark
 import {  AuthGuardService  } from "./servicio/auth.guard";
-
-
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -65,7 +67,11 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     TableModule,
     PanelModule,
     DialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   providers: [
     StatusBar,
