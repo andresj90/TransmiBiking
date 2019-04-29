@@ -1,7 +1,6 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// tslint:disable-next-line:quotemark
 import {  AuthGuardService  } from "./servicio/auth.guard";
 
 const routes: Routes = [
@@ -23,10 +22,7 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: './settings/settings.module#SettingsPageModule'
   },
-  {
-    path: 'news',
-    loadChildren: './news/news.module#NewsPageModule'
-  },
+
   {
     path: 'login',
     loadChildren: './login/login.module#LoginPageModule'
@@ -52,9 +48,11 @@ const routes: Routes = [
     path: 'prestamo',
     loadChildren: './prestamo/prestamo.module#PrestamoPageModule',
     canActivate: [AuthGuardService]
-  },  { path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' }
-
-
+  },
+  { path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' },
+  { path: 'evento', 
+  loadChildren: './evento/evento.module#EventoPageModule' 
+  }
 ];
 
 @NgModule({
@@ -62,3 +60,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
