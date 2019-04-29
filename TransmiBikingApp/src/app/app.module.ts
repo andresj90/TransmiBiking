@@ -34,7 +34,7 @@ import { DialogModule } from 'primeng/dialog';
 //services 
 import {  AuthGuardService  } from "./servicio/auth.guard";
 import {CarouselModule} from 'primeng/carousel';
-
+import { ValidationService } from './servicio/validation.service';
 
 
 
@@ -71,6 +71,7 @@ import {CarouselModule} from 'primeng/carousel';
     FlashMessagesService,
     AngularFirestore,
     AuthGuardService,
+    ValidationService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
