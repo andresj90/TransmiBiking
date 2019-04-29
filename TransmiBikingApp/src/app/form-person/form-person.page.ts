@@ -53,8 +53,7 @@ export class FormPersonPage implements OnInit {
           this.foto = 'https://angellomix.com/wp-content/uploads/2016/10/login.png';
         }
         this.informacion.url = this.foto;
-        // tslint:disable-next-line:no-debugger
-        debugger;
+        this.informacion.email = this.email;
         this.authService.creardatos(this.informacion).then((ress) => {
           console.log(this.informacion);
           this.router.navigate(['/login']);

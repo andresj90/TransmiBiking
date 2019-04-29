@@ -11,55 +11,61 @@
 
 <ion-content padding>
   <p-panel header="Bienvenido a Transmibiking">
-  <form (ngSubmit)="EnviarDatos()" >
-    <div class="form-group">
-      <label for="Input1">Email</label>
-      <input type="email" name="email" class="form-control" id="Input1" placeholder="Email" [(ngModel)]="email" [(ngModel)]="informacion.email" >
-    </div>
-    <div class="form-group">
-      <label for="Input2">Password</label>
-      <input type="password" name="password" class="form-control" id="Input2" placeholder="Password" [(ngModel)]="password">
-    </div>
-    <div class="form-group">
-      <label for="Input4">Nombre</label>
-      <input type="text" name="Nombre" class="form-control" id="Input4" placeholder="Nombre" [(ngModel)]="informacion.nombre" required>
-    </div>
-    <div class="form-group">
-      <label for="Input5">Apellido</label>
-      <input type="text" name="apellido" class="form-control" min="10" id="Input5" placeholder="Apellido" [(ngModel)]="informacion.apellido" required>
-    </div>
-    <div class="form-group">  
-    <label for="sel1">
-     Género:
-    </label>
-    <select class="form-control" id="sel1" [(ngModel)]="informacion.genero" aria-placeholder="Genero">
-      <option value="Genero">Genero</option>
-      <option>Masculino</option>
-      <option>Femenino</option>
-      <option>Indefinido</option>
-    </select>
-    </div>
-    <div class="form-group">
-      <label for="Input7">Celular</label>
-      <input type="number"name="Celular" class="form-control" id="Input7" placeholder="Celular" [(ngModel)]="informacion.celular" required>
-    </div>
-    <div class="form-group">
-      <label for="Input8">Edad</label>
-      <input type="number" name="edad" class="form-control" id="Input8" placeholder="Edad" [(ngModel)]="informacion.edad" required>
-    </div>
-    <div>
-    <label> Subir imagen</label>
-      <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
-    </div>
-    <hr>
-    <div class="progress">
-      <div class="progress-bar progress-bar-striped bg-success" role="progressbar" 
-      [style.width]="(uploadPercent | async) + '%'">
-
+    <form (ngSubmit)="EnviarDatos()">
+      <div class="form-group">
+        <label for="Input1">Email</label>
+        <input type="email" name="email" class="form-control" id="Input1" placeholder="Email" [(ngModel)]="email">
       </div>
-    </div>
-    <input #imageUser type="text" class="from-control" value="{{urlImage | async}}" style="display:none;" >
-    <ion-button primary block type="submit" value="Guardar">Guardar</ion-button>
-  </form>
+      <div class="form-group">
+        <label for="Input2">Password</label>
+        <input type="password" name="password" class="form-control" id="Input2" placeholder="Password"
+          [(ngModel)]="password">
+      </div>
+      <div class="form-group">
+        <label for="Input4">Nombre</label>
+        <input type="text" name="Nombre" class="form-control" id="Input4" placeholder="Nombre"
+          [(ngModel)]="informacion.nombre" required>
+      </div>
+      <div class="form-group">
+        <label for="Input5">Apellido</label>
+        <input type="text" name="apellido" class="form-control" min="10" id="Input5" placeholder="Apellido"
+          [(ngModel)]="informacion.apellido" required>
+      </div>
+      <div class="form-group">
+        <label for="sel1">
+          Género:
+        </label>
+        <select class="form-control" type="text" name="genero" id="sel1" [(ngModel)]="informacion.genero"
+          placeholder="Genero">
+          <option value="">Genero</option>
+          <option>Masculino</option>
+          <option>Femenino</option>
+          <option>Indefinido</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="Input7">Celular</label>
+        <input type="number" name="Celular" class="form-control" id="Input7" placeholder="Celular"
+          [(ngModel)]="informacion.celular" required>
+      </div>
+      <div class="form-group">
+        <label for="Input8">Edad</label>
+        <input type="number" name="edad" class="form-control" id="Input8" placeholder="Edad"
+          [(ngModel)]="informacion.edad" required>
+      </div>
+      <div>
+        <label> Subir imagen</label>
+        <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+      </div>
+      <hr>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+          [style.width]="(uploadPercent | async) + '%'">
+
+        </div>
+      </div>
+      <input #imageUser type="text" class="from-control" value="{{urlImage | async}}" style="display:none;">
+      <ion-button primary block type="submit" value="Guardar">Guardar</ion-button>
+    </form>
   </p-panel>
 </ion-content>
