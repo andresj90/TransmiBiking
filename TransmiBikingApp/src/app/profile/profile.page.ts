@@ -10,7 +10,9 @@ import { FormPersonService } from '../servicio/form-person.service';
 })
 export class ProfilePage implements OnInit {
 
-  public userInf: any;
+  userInf: any;
+  public display = false;
+  public cambio = false;
   constructor(private socialSharing: SocialSharing,
     private auth: AuthService,
     public inf: FormPersonService
@@ -48,15 +50,21 @@ export class ProfilePage implements OnInit {
       apellido: '',
       genero: '',
       celular: '',
-      edad: ''
+      edad: '',
+      url: '',
+      email: ''
     };
 
-    this.inf.ObtenerInformacion().subscribe((user) => {
+    this.inf.ObtenerInformacion().valueChanges().subscribe((user) => {
       this.userInf = user;
     });
 
   }
-
-
-
+  onUsuario(usuario) {
+    this.showDialog();
+  }
+  showDialog() {
+    this.display = true;
+    this.cambio = true;
+  }
 }

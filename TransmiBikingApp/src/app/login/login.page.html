@@ -1,5 +1,9 @@
 	
 <ion-header>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -11,37 +15,35 @@
 </ion-header>
 
 <ion-content padding>
-  <form (ngSubmit)="onSubmitAddUser()">
-    <div class="container">
-      <div class="d-flex justify-content-center h-100">
-        <div class="card">
-          <div class="card-body">
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-user"></i></span>
-              </div>
-              <input id="email" class="form-control" name="email" [(ngModel)]="email" type="email">
-            </div>
-            <div class="input-group form-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-key"></i></span>
-              </div>
-              <input id="password" class="form-control" name="password" [(ngModel)]="password" type="password">
-            </div>
-            <div class="input-group form-group">
-              <input class="btn float-right login_btn"  type="submit" value="Sign in">
-            </div>
-            <div class="input-group form-group">
-              <input class="btn float-right login_btn"  (click)="registro()" value="Register">
-            </div>
-          </div>
-          <div class="card-footer">
-            <div class="d-flex justify-content-center">
-              <a href="#">Forgot your password?</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </form>
+  <div class="container">
+    <div class="row">
+    	<div class="col-md-4 col-md-offset-4">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Inicio Sesion</h3>
+			 	</div>
+			  	<div class="panel-body">
+			    	<form accept-charset="UTF-8" role="form" (ngSubmit)="onSubmitAddUser()">
+                    <fieldset>
+			    	  	<div class="form-group">
+                  <label>Email</label>
+                    <input id="email" class="form-control" name="email" [(ngModel)]="email" type="email">
+			    		</div>
+			    		<div class="form-group">
+                  <label>Password</label>
+                  <input id="password" class="form-control" name="password" [(ngModel)]="password" type="password">
+			    		</div>
+              <input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
+			    	</fieldset>
+              </form>
+              <hr>
+                    <input class="btn btn-lg btn-success btn-block" id="registro" (click)="registro()" value="Register">
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
 </ion-content>
+
+
+

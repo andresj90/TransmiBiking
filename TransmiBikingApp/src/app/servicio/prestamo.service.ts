@@ -24,8 +24,8 @@ export class PrestamoService {
   ActualizarPrestamo(id, data) {
     return this.db.collection('informacionUsuario').doc(this.auth.getIud()).collection('ListprestamoBici').doc(id).set(data);
   }
-  ObtenerPrestamo(id) {
-    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).collection('ListprestamoBici').doc(id).snapshotChanges();
+  ObtenerPrestamo() {
+    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).collection('ListprestamoBici').snapshotChanges();
   }
 
 }

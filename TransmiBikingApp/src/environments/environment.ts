@@ -9,7 +9,7 @@ export const environment = {
     authDomain: 'softwarebicileta.firebaseapp.com',
     databaseURL: 'https://softwarebicileta.firebaseio.com',
     projectId: 'softwarebicileta',
-    storageBucket: '',
+    storageBucket: 'softwarebicileta.appspot.com',
     messagingSenderId: '363659830146'
   }
 };

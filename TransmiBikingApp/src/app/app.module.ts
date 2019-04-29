@@ -31,12 +31,14 @@ import { PanelModule } from 'primeng/panel';
 import { DialogModule } from 'primeng/dialog';
 // import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
 
-//services 
+// services
+// tslint:disable-next-line:quotemark
 import {  AuthGuardService  } from "./servicio/auth.guard";
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {CarouselModule} from 'primeng/carousel';
 import { ValidationService } from './servicio/validation.service';
-
-
 
 @NgModule({
   declarations: [AppComponent],
@@ -56,7 +58,11 @@ import { ValidationService } from './servicio/validation.service';
     CarouselModule,
     PanelModule,
     DialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
   providers: [
     StatusBar,
