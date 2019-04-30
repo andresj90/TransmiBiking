@@ -3,7 +3,7 @@ import { PrestamoService } from '../servicio/prestamo.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { ValidationService } from '../servicio/validation.service';
-
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-prestamo',
@@ -17,7 +17,8 @@ export class PrestamoPage implements OnInit {
     public auth: PrestamoService,
     public flashMensaje: FlashMessagesService,
     private datePicker: DatePicker,
-    private validation: ValidationService
+    private validation: ValidationService,
+    public alertController: AlertController
   ) {}
 
   ngOnInit() {
@@ -35,13 +36,12 @@ export class PrestamoPage implements OnInit {
 
   crearReserva() {
     if (!this.validation.validarCamposTextoPrestamos(this.data.fecha, this.data.ruta)) {
-      console.log('Todos los campos deben contener datos')
-      // this.flashMensaje.show('Todos los campos deben contener datos', {cssClass: 'alert-danger', timeout: 5000});
+      this.presentAlert("El formulario no debe contener campos vacios");
     }else if(!this.validation.validarCamposNumericosPrestano(this.data.adulto, this.data.nino)){
-      this.flashMensaje.show('Se debe solicitar almenos 1 bicicleta', {cssClass: 'alert-danger', timeout: 5000});
+      this.presentAlert("El prestamo debe contener al menos una bicicleta");
     }else{
       this.auth.createPrestamo(this.data).then(() => {
-        this.flashMensaje.show('Prestamo procesado', {cssClass: 'alert-success', timeout: 5000});
+      this.presentAlertConfirm();
       }, (error) => {
         // alerta
       });
@@ -57,6 +57,34 @@ export class PrestamoPage implements OnInit {
       date => console.log('Got date: ', date),
       err => console.log('Error occurred while getting date: ', err)
     );
+  }
+
+  async presentAlert(msg) {
+    const alert = await this.alertController.create({
+      header: 'Alerta',
+      subHeader: 'Registro prestamo',
+      message: msg,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  async presentAlertConfirm() {
+    const alert = await this.alertController.create({
+      header: 'Confirmación',
+      message: 'Prestamo procesado',
+      buttons: [
+        {
+          text: 'Okay',
+          cssClass: 'secondary',
+          handler: () => {
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }
