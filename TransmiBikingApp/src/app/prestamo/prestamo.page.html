@@ -11,29 +11,36 @@
 
 <ion-content id="n">
   <p-panel header="Prestamo de Bicicletas">
-    <form (ngSubmit)="crearReserva()" >
+    <form (ngSubmit)="crearReserva()" [noValidate]="false">
+
       <ion-item>
-        <ion-input type="date" (click)="Calendario()" name="fecha" [(ngModel)]="data.fecha" required>
+        <ion-input type="date" (click)="Calendario()" name="fecha" [(ngModel)]="data.fecha" [required]="true">
         </ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label>Ruta</ion-label>
-        <ion-select multiple="false" name="ruta" placeholder="Seleccione Estaciòn" [(ngModel)]="data.ruta" required>
+        <ion-select multiple="false" name="ruta" placeholder="Seleccione Estaciòn" [(ngModel)]="data.ruta"
+          [required]="true">
           <ion-select-option value="Station A">Station A</ion-select-option>
         </ion-select>
       </ion-item>
+
       <ion-item>
         <ion-label> Cantidad Bicicletas: </ion-label>
         <br>
         <ion-label> Adulto </ion-label>
-        <ion-input  type="number" id="adulto" name="adulto" value="0" min="0" max="2" [(ngModel)]="data.adulto"></ion-input>
+        <ion-input type="number" id="adulto" name="adulto"  min="0"  max="2" value="0" [(ngModel)]="data.adulto"></ion-input>
         <ion-label>Niño </ion-label>
-        <ion-input type="number" id="nino" name="nino" value="0" min="0" max0="2" [(ngModel)]="data.nino"></ion-input>
+        <ion-input type="number" id="nino" name="nino" min="0" max= "2" value="0" [(ngModel)]="data.nino"></ion-input>
       </ion-item>
+
       <ion-button color="primary" expand="block" [routerLink]="[ '/lista-prestamos']">
         Mostrar Prestamos
       </ion-button>
+
       <ion-button color="secondary" expand="block" type="submit">Confirmar</ion-button>
+
     </form>
   </p-panel>
 

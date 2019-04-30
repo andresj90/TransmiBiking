@@ -50,37 +50,23 @@ export class FormPersonPage implements OnInit {
   EnviarDatos(datos) {
     console.log(datos);
     console.log(this.informacion);
-    //validaciones 
-    if (!this.validation.validarCampoContrasenaRegistro(this.password)) {
-      console.log(this.password)
-      this.presentAlert("La contraseña debe ser entre 8 - 16 caracteres debe contener al menos una mayúscula, minúscula y un numero");
-    } else if (!this.validation.validarNombreRegistro(this.informacion.nombre, this.informacion.apellido)) {
-      console.log(`${this.informacion.nombre} ${this.informacion.apellido}`)
-      this.presentAlert("Los campos nombre y apellido no pueden estar vacíos");
-    } else if (!this.validation.validarCampoTelefonoRegistro(this.informacion.celular)) {
-      console.log(this.informacion.celular)
-      this.presentAlert("El campo celular es numérico y debe contener 10 dígitos");
-    } else if (!this.validation.validarCampoEdadRegistro(this.informacion.edad)) {
-      console.log(this.informacion.edad)
-      this.presentAlert("El usuario debe tener mínimo 10 años para poder registrarse")
-    } else {
-      this.auth.registeruser(this.email, this.password)
-        .then((res) => {
-          if (this.inputImageUser.nativeElement.value !== '') {
-            this.foto = this.inputImageUser.nativeElement.value;
-          } else {
-            this.foto = 'https://angellomix.com/wp-content/uploads/2016/10/login.png';
-          }
-          this.informacion.url = this.foto;
-          this.informacion.email = this.email;
-          this.authService.creardatos(this.informacion).then((ress) => {
-            this.presentAlertConfirm();
-          });
-        }).catch((err) => {
-          console.log(err);
+    this.auth.registeruser(this.email, this.password)
+      .then((res) => {
+        if (this.inputImageUser.nativeElement.value !== '') {
+          this.foto = this.inputImageUser.nativeElement.value;
+        } else {
+          this.foto = 'https://angellomix.com/wp-content/uploads/2016/10/login.png';
+        }
+        this.informacion.url = this.foto;
+        this.informacion.email = this.email;
+        this.authService.creardatos(this.informacion).then((ress) => {
+          this.presentAlertConfirm();
         });
-    }
+      }).catch((err) => {
+        this.presentAlert(err)
+      });
   }
+  
 
   onUpload(e) {
     const id = Math.random().toString(36).substring(2);
