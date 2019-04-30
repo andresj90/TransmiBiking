@@ -1,7 +1,8 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {  AuthGuardService  } from "./servicio/auth.guard";
+// tslint:disable-next-line:quotemark
+import { AuthGuardService } from "./servicio/auth.guard";
 
 const routes: Routes = [
   {
@@ -50,9 +51,11 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   { path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' },
-  { path: 'evento', 
-  loadChildren: './evento/evento.module#EventoPageModule' 
+  {
+    path: 'evento',
+    loadChildren: './evento/evento.module#EventoPageModule'
   }
+
 ];
 
 @NgModule({
