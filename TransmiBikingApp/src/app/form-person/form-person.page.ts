@@ -18,7 +18,7 @@ import { AlertController } from '@ionic/angular';
 export class FormPersonPage implements OnInit {
   private informacion: any;
   public email: string;
-  public password: string;
+  private password: string;
   uploadPercent: Observable<number>;
   urlImage: Observable<string>;
   foto: any;
@@ -29,8 +29,7 @@ export class FormPersonPage implements OnInit {
     private storage: AngularFireStorage,
     private validation: ValidationService,
     public alertController: AlertController
-  ) {
-  }
+  ) { }
   @ViewChild('imageUser') inputImageUser: ElementRef;
   ngOnInit() {
     this.CrearInformacionUsuario();
@@ -38,7 +37,6 @@ export class FormPersonPage implements OnInit {
 
   CrearInformacionUsuario() {
     this.informacion = {
-      id: '',
       nombre: '',
       apellido: '',
       genero: '',
@@ -51,7 +49,7 @@ export class FormPersonPage implements OnInit {
 
   EnviarDatos(datos) {
     console.log(datos);
-    console.log(this.informacion)
+    console.log(this.informacion);
     //validaciones 
     if (!this.validation.validarCampoContrasenaRegistro(this.password)) {
       console.log(this.password)
@@ -74,10 +72,9 @@ export class FormPersonPage implements OnInit {
             this.foto = 'https://angellomix.com/wp-content/uploads/2016/10/login.png';
           }
           this.informacion.url = this.foto;
-          // tslint:disable-next-line:no-debugger
-          debugger;
+          this.informacion.email = this.email;
           this.authService.creardatos(this.informacion).then((ress) => {
-          this.presentAlertConfirm();
+            this.presentAlertConfirm();
           });
         }).catch((err) => {
           console.log(err);
@@ -94,7 +91,6 @@ export class FormPersonPage implements OnInit {
     this.uploadPercent = task.percentageChanges();
     task.snapshotChanges().pipe(finalize(() => this.urlImage = ref.getDownloadURL()))
       .subscribe();
-
   }
 
 
@@ -128,3 +124,4 @@ export class FormPersonPage implements OnInit {
   }
 
 }
+

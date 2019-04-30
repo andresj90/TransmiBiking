@@ -28,11 +28,6 @@ export class AppComponent {
       title: 'Profile',
       url: '/profile',
       icon: 'person'
-    },
-    {
-      title: 'News',
-      url: '/news',
-      icon: 'news'
     }
   ];
 

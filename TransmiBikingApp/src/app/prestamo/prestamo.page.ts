@@ -19,7 +19,7 @@ export class PrestamoPage implements OnInit {
     private datePicker: DatePicker,
     private validation: ValidationService,
     public alertController: AlertController
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.DatosReserva();
@@ -37,11 +37,11 @@ export class PrestamoPage implements OnInit {
   crearReserva() {
     if (!this.validation.validarCamposTextoPrestamos(this.data.fecha, this.data.ruta)) {
       this.presentAlert("El formulario no debe contener campos vacios");
-    }else if(!this.validation.validarCamposNumericosPrestano(this.data.adulto, this.data.nino)){
+    } else if (!this.validation.validarCamposNumericosPrestano(this.data.adulto, this.data.nino)) {
       this.presentAlert("El prestamo debe contener al menos una bicicleta");
-    }else{
+    } else {
       this.auth.createPrestamo(this.data).then(() => {
-      this.presentAlertConfirm();
+        this.presentAlertConfirm();
       }, (error) => {
         // alerta
       });
