@@ -40,7 +40,6 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {CarouselModule} from 'primeng/carousel';
 import { ValidationService } from './servicio/validation.service';
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

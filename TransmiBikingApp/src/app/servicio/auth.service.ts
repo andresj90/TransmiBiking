@@ -23,7 +23,7 @@ export class AuthService {
       this.afAuth.auth.createUserWithEmailAndPassword(email, pass)
         .then(userData => {
           console.log(userData);
-          resolve(userData)
+          resolve(userData);
         },
           err => reject(err));
     });
@@ -60,7 +60,7 @@ export class AuthService {
   //   });
   // }
   isLoguedIn(loginStatus) {
-    if (loginStatus == false) {
+    if (loginStatus === false) {
       AuthService.isAuthorized = true;
     } else {
       AuthService.isAuthorized = false;

@@ -18,7 +18,7 @@ export class FormPersonService {
     return this.db.collection('informacionUsuario').doc(this.auth.getIud()).set(informacion);
   }
   UpdateDatos(datos: any) {
-    return this.db.collection('informacionusuario').doc(this.auth.getIud()).set(datos);
+    return this.db.collection('informacionUsuario').doc(this.auth.getIud()).set(datos);
   }
   ObtenerInformacion() {
     return this.db.collection('informacionUsuario').doc(this.auth.getIud());
