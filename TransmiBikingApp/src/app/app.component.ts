@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import { AuthService } from './servicio/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -41,10 +42,13 @@ export class AppComponent {
     }
   ];
 
+  public inicio = false;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private auth: AuthService,
+    private router: Router
   ) {
     this.initializeApp();
   }
@@ -53,6 +57,20 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.login();
     });
   }
+  login() {
+    if (AuthService.isAuthorized) {
+      AuthService.inicio = true;
+    } else {
+      AuthService.salir = false;
+    }
+  }
+  onClickLogout() {
+    this.auth.logout();
+    this.inicio = true;
+    this.router.navigate(['/login']);
+  }
+
 }

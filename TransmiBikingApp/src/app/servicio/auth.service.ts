@@ -11,7 +11,8 @@ import { getToken } from '@angular/router/src/utils/preactivation';
 export class AuthService {
 
   static isAuthorized = false;
-
+  static inicio = false;
+  static salir = true;
   constructor(
     public afAuth: AngularFireAuth,
     public db: AngularFirestore

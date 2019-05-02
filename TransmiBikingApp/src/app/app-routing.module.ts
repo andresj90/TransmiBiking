@@ -55,7 +55,7 @@ const routes: Routes = [
     path: 'evento',
     loadChildren: './evento/evento.module#EventoPageModule'
   },
-  { path: 'miseventos', 
+  { path: 'miseventos',
    loadChildren: './listeventos/listeventos.module#ListeventosPageModule' }
 
 
