@@ -16,13 +16,14 @@
 
 <ion-content padding class="pg">
 
+
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="col-lg-9 col-md-12 col-sm-9 col-xs-12">
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border-radius: 16px;">
-            <div class="well profile col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+          <div class="col-lg-9 col-md-12 col-sm-9 col-xs-12" style="border-radius: 16px;">
+            <div class="well profile col-lg-9 col-md-12 col-sm-9 col-xs-12">
+              <div class="col-lg-9 col-md-12 col-sm-9 col-xs-12 text-center">
                 <figure>
                   <img src="{{userInf.url}}" alt="" class="img-circle" style="width:75px;" id="user-img">
                 </figure>
@@ -48,7 +49,8 @@
 
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 divider text-center"></div>
                 <div class="col-xs-3" style="justify-content: center;">
-                  <button class="btn btn-primary" id="guardar" [disabled]="cambio" (click)="onUsuario(userInf)"><i class="fas fa-edit"></i></button>
+                  <button class="btn btn-primary" id="editar" [disabled]="false" (click)="onUsuario(userInf)"><i
+                      class="fas fa-edit"></i></button>
                 </div>
                 <div class=" col-lg-6 left" style="text-align:center;overflow-wrap: break-word;">
                 </div>
@@ -60,53 +62,73 @@
     </div>
   </div>
   <p-dialog header="Editar informacion" [(visible)]="display" [modal]="true" [responsive]="true"
-    [style]="{width: '100%', minWidth: '200px', heigth: '100%'}" [maximizable]="true" [baseZIndex]="10000000">
-    <div class="col-md-12" style="overflow: auto;">
-      <div class="card-body" *ngIf="InformacionUsuarioProvicional">
-        <form (ngSubmit)="onGuardarUsuarioUpdate()" [noValidate]=false>
-    
-              <div class="form-group">
-                  <label for="Input4">Nombre</label>
-                  <input type="text" name="nombre" class="form-control" placeholder="Nombre" [(ngModel)]="InformacionUsuarioProvicional.nombre"
-                  value="{{InformacionUsuarioProvicional.nombre}}" required>
-                </div>
-          
-                <div class="form-group">
-                  <label for="Input5">Apellido</label>
-                  <input type="text" name="apellido" class="form-control"  placeholder="Apellido"
-                  [(ngModel)]="InformacionUsuarioProvicional.apellido" value="{{InformacionUsuarioProvicional.apellido}}" required>
-                </div>
+    [style]="{width: '100%', heigth: '100%'}" [maximizable]="true" [baseZIndex]="10000000">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-9 col-xs-12">
+          <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-9 col-xs-12" style="border-radius: 16px;">
+              <div class="well profile col-lg-9 col-md-12 col-sm-9 col-xs-12">
+                <div class="col-lg-9 col-md-12 col-sm-9 col-xs-12 text-center" style="overflow: auto;">
+                  <div class="card-body" *ngIf="InformacionUsuarioProvicional">
+                    <form (ngSubmit)="onGuardarUsuarioUpdate()" [noValidate]=false>
 
-              <div class="form-group">
-                  <label for="Input7">Celular</label>
-                  <input type="texto" name="celular" class="form-control" pattern="^[0-9]*$" title="Ejemplo número valido 3201234567" minlength="10" maxlength="10" placeholder="Celular" [(ngModel)]="InformacionUsuarioProvicional.celular"
-                  value="{{InformacionUsuarioProvicional.celular}}" [required]=true>
-                </div>
-                <div class="form-group">
-                  <label for="Input8">Edad</label>
-                  <input type="number" name="edad" class="form-control" min="18" placeholder="Edad" [(ngModel)]="InformacionUsuarioProvicional.edad" value={{InformacionUsuarioProvicional.edad}}
-                    required>
-                </div>
+                      <div class="form-group">
+                        <label for="Input4">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre"
+                          [(ngModel)]="InformacionUsuarioProvicional.nombre"
+                          value="{{InformacionUsuarioProvicional.nombre}}" required>
+                      </div>
 
-              <div class="col-xs-12">
-                  <label>Subir imagen</label>
-                <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
-              </div>
-              <br>
-    
-              <div class="progress col-xs-12">
-                <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
-                  [style.width]="(uploadPercent | async) + '%'">
-    
+                      <div class="form-group">
+                        <label for="Input5">Apellido</label>
+                        <input type="text" name="apellido" class="form-control" placeholder="Apellido"
+                          [(ngModel)]="InformacionUsuarioProvicional.apellido"
+                          value="{{InformacionUsuarioProvicional.apellido}}" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="Input7">Celular</label>
+                        <input type="texto" name="celular" class="form-control" pattern="^[0-9]*$"
+                          title="Ejemplo número valido 3201234567" minlength="10" maxlength="10" placeholder="Celular"
+                          [(ngModel)]="InformacionUsuarioProvicional.celular"
+                          value="{{InformacionUsuarioProvicional.celular}}" [required]=true>
+                      </div>
+                      <div class="form-group">
+                        <label for="Input8">Edad</label>
+                        <input type="number" name="edad" class="form-control" min="18" placeholder="Edad"
+                          [(ngModel)]="InformacionUsuarioProvicional.edad" value={{InformacionUsuarioProvicional.edad}}
+                          required>
+                      </div>
+
+                      <div class="col-xs-12">
+                        <label>Subir imagen</label>
+                        <input type="file" accept=".png, .jpg" (change)="onUpload($event)">
+                      </div>
+                      <br>
+
+                      <div class="progress col-xs-12">
+                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+                          [style.width]="(uploadPercent | async) + '%'">
+
+                        </div>
+                      </div>
+                      <input #imageUser type="text" class="from-control" value="{{urlImage | async}}"
+                        style="display:none;">
+
+                      <div class="col-xs-12">
+                        <button style="margin: 10px;" class="form-control" type="submit"
+                          class="btn btn-primary">Guardar</button>
+                        <div></div>
+                      </div>
+                    </form>
+                  </div>
+
                 </div>
               </div>
-              <input #imageUser type="text" class="from-control" value="{{urlImage | async}}" style="display:none;">
-    
-              <div class="col-xs-12">
-                <button style="margin: 10px;" class="form-control" type="submit" class="btn btn-primary">Guardar</button>
-                <div></div>
-              </div>
-        </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </p-dialog>
