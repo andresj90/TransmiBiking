@@ -63,10 +63,10 @@ export class FormPersonPage implements OnInit {
           this.presentAlertConfirm();
         });
       }).catch((err) => {
-        this.presentAlert(err)
+        this.presentAlert(err);
       });
   }
-  
+
 
   onUpload(e) {
     const id = Math.random().toString(36).substring(2);

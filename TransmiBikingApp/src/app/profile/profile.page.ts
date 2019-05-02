@@ -5,6 +5,7 @@ import { FormPersonService } from '../servicio/form-person.service';
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { finalize } from 'rxjs/operators';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -28,6 +29,14 @@ export class ProfilePage implements OnInit {
 
   ngOnInit() {
     this.InformacionUsuario();
+    this.onCancelarUsuario();
+    $(document).on('click', '.pi-times', function () {
+      // tslint:disable-next-line:no-debugger
+      debugger;
+      this.cambio = false;
+      console.log('entre');
+    });
+
   }
 
   shareWitheFriends() {
@@ -91,12 +100,15 @@ export class ProfilePage implements OnInit {
     this.onCancelarUsuario();
   }
 
+
+
   onCancelarUsuario() {
     this.InformacionUsuarioProvicional = null;
     this.display = false;
     this.cambio = false;
     this.cerrar.emit();
   }
+
   showDialog() {
     this.display = true;
     this.cambio = true;
