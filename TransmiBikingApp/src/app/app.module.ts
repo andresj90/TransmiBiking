@@ -22,8 +22,28 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './servicio/auth.service';
 import { FormsModule } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
-import {FlashMessagesModule} from 'angular2-flash-messages';
-import {FlashMessagesService} from 'angular2-flash-messages';
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { FlashMessagesService } from 'angular2-flash-messages';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TableModule} from 'primeng/table';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { PanelModule } from 'primeng/panel';
+import { DialogModule } from 'primeng/dialog';
+
+// import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
+
+// services
+// tslint:disable-next-line:quotemark
+import {  AuthGuardService  } from "./servicio/auth.guard";
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import {CarouselModule} from 'primeng/carousel';
+import { ValidationService } from './servicio/validation.service';
+import { EventoService } from './servicio/evento.service';
+import { OrderListModule } from 'primeng/orderlist';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -36,7 +56,19 @@ import {FlashMessagesService} from 'angular2-flash-messages';
     NgxQRCodeModule,
     FormsModule,
     AngularFireAuthModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    NgbModule.forRoot(),
+    TableModule,
+    CarouselModule,
+    PanelModule,
+    DialogModule,
+    BrowserAnimationsModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    OrderListModule,
+    TableModule
   ],
   providers: [
     StatusBar,
@@ -50,6 +82,9 @@ import {FlashMessagesService} from 'angular2-flash-messages';
     AuthService,
     FlashMessagesService,
     AngularFirestore,
+    AuthGuardService,
+    ValidationService,
+    EventoService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

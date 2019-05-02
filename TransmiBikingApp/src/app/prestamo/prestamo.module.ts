@@ -6,7 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PrestamoPage } from './prestamo.page';
-
+import { PanelModule } from 'primeng/panel';
+import { DialogModule } from 'primeng/dialog';
 const routes: Routes = [
   {
     path: '',
@@ -14,15 +15,15 @@ const routes: Routes = [
   }
 ];
 
-
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    PanelModule,
+    DialogModule,
     RouterModule.forChild(routes)
   ],
   declarations: [PrestamoPage]
 })
-export class PrestamoPageModule {}
+export class PrestamoPageModule { }

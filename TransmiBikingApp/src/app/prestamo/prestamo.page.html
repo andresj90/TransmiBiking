@@ -4,16 +4,49 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title text-center>
-      Lista Prestamos
+      Prestamo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let p of prestamo">
-      <!-- <i-p> </i-p> -->
-      <ion-label>Fecha: {{p.data.dateReservation}}, origen: {{p.data.origin}}, bikeType: {{p.data.bikeType}} </ion-label>
-    </ion-item>
-  </ion-list>
+<ion-content id="n">
+  <p-panel header="Prestamo de Bicicletas">
+    <form id="formEjemplo" (ngSubmit)="crearReserva()" [noValidate]="false">
+
+      <ion-item>
+        <ion-input type="date" (click)="Calendario()" name="fecha" [(ngModel)]="data.fecha" [required]="true">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Ruta</ion-label>
+        <ion-select multiple="false" name="ruta" placeholder="Seleccione Estaciòn" [(ngModel)]="data.ruta"
+          [required]="true">
+          <ion-select-option value="Station A">Station A</ion-select-option>
+          <ion-select-option value="Station A">Station B</ion-select-option>
+          <ion-select-option value="Station A">Station C</ion-select-option>
+          <ion-select-option value="Station A">Station D</ion-select-option>
+          <ion-select-option value="Station A">Station E</ion-select-option>
+          <ion-select-option value="Station A">Station F</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label> Cantidad Bicicletas: </ion-label>
+        <br>
+        <ion-label> Adulto </ion-label>
+        <ion-input type="number" id="adulto" name="adulto"  min="0"  max="2" value="0" [(ngModel)]="data.adulto"></ion-input>
+        <ion-label>Niño </ion-label>
+        <ion-input type="number" id="nino" name="nino" min="0" max= "2" value="0" [(ngModel)]="data.nino"></ion-input>
+      </ion-item>
+
+      <ion-button color="primary" expand="block" [routerLink]="[ '/lista-prestamos']">
+        Mostrar Prestamos
+      </ion-button>
+
+      <ion-button color="secondary" id="btnLimpiar" expand="block" type="submit">Confirmar</ion-button>
+
+    </form>
+  </p-panel>
+
 </ion-content>
