@@ -30,13 +30,6 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
     this.InformacionUsuario();
     this.onCancelarUsuario();
-    $(document).on('click', '.pi-times', function () {
-      // tslint:disable-next-line:no-debugger
-      debugger;
-      this.cambio = false;
-      console.log('entre');
-    });
-
   }
 
   shareWitheFriends() {

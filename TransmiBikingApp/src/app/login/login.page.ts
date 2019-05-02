@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  public email: string;
-  public password: string;
+  private email: string;
+  private password: string;
   constructor(
     public authService: AuthService,
     private router: Router
@@ -23,6 +23,8 @@ export class LoginPage implements OnInit {
     console.log('estoy aqui');
     this.authService.loginEmail(this.email, this.password)
       .then((res) => {
+        AuthService.inicio = true;
+        AuthService.salir = false;
         this.router.navigate(['home']);
       }).catch((err) => {
         console.log(err);
@@ -31,4 +33,5 @@ export class LoginPage implements OnInit {
   registro() {
     this.router.navigate(['form-person']);
   }
+
 }

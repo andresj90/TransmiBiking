@@ -11,7 +11,7 @@
 
 <ion-content id="n">
   <p-panel header="Prestamo de Bicicletas">
-    <form (ngSubmit)="crearReserva()" [noValidate]="false">
+    <form id="formEjemplo" (ngSubmit)="crearReserva()" [noValidate]="false">
 
       <ion-item>
         <ion-input type="date" (click)="Calendario()" name="fecha" [(ngModel)]="data.fecha" [required]="true">
@@ -39,7 +39,7 @@
         Mostrar Prestamos
       </ion-button>
 
-      <ion-button color="secondary" expand="block" type="submit">Confirmar</ion-button>
+      <ion-button color="secondary" id="btnLimpiar" expand="block" type="submit">Confirmar</ion-button>
 
     </form>
   </p-panel>

@@ -36,11 +36,11 @@ export class PrestamoPage implements OnInit {
 
   crearReserva() {
     if (!this.validation.validarCamposNumericosPrestano(this.data.adulto, this.data.nino)) {
-      this.presentAlert("El prestamo debe contener al menos una bicicleta");
+      this.presentAlert('El prestamo debe contener al menos una bicicleta');
     } else {
       this.auth.createPrestamo(this.data).then(() => {
         this.presentAlertConfirm();
-        
+        this.data = '';
       }, (error) => {
         // alerta
       });

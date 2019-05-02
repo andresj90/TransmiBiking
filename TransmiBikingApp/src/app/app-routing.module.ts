@@ -60,8 +60,6 @@ const routes: Routes = [
     loadChildren: './listeventos/listeventos.module#ListeventosPageModule',
     canActivate: [AuthGuardService]
   }
-
-
 ];
 
 @NgModule({
