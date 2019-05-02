@@ -47,7 +47,6 @@
     "angularfire2": "^5.1.2",
     "bootstrap": "^4.3.1",
     "com.darktalker.cordova.screenshot": "^0.1.6",
-    "cordova-android": "~7.1.4",
     "cordova-browser": "5.0.4",
     "cordova-plugin-calendar": "5.1.4",
     "cordova-plugin-camera": "~4.0.3",
@@ -79,7 +78,9 @@
     "primeicons": "^1.0.0",
     "primeng": "^7.1.0",
     "rxjs": "^6.3.3",
-    "zone.js": "~0.8.29"
+    "zone.js": "~0.8.29",
+    "cordova-plugin-telerik-imagepicker": "~2.3.0",
+    "cordova-android": "~7.1.4"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.12.3",
