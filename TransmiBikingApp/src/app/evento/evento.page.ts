@@ -14,6 +14,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./evento.page.scss'],
 })
 export class EventoPage implements OnInit {
+
   eventos: any;
 
   constructor(
@@ -47,7 +48,7 @@ export class EventoPage implements OnInit {
   suscribirUsuarioAEvento(data) {
     if (AuthService.isAuthorized) {
       this.db.collection('informacionUsuario').doc(this.authService.getIud()).update(
-        { eventos: firebase.firestore.FieldValue.arrayUnion(data.id) }
+        { eventos: firebase.firestore.FieldValue.arrayUnion(data.data()) }
       ).then(() => {
         this.presentAlert("Inscripción al evento completada");
       }).catch((err) => {

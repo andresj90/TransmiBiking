@@ -10,5 +10,22 @@
 </ion-header>
 
 <ion-content padding>
-
+  <p-table [value]="eventos">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Origen</th>
+            <th>Destino</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-evento>
+        <tr>
+            <td>{{evento.nombre}}</td>
+            <td>{{evento.fecha}}</td>
+            <td>{{evento.origen}}</td>
+            <td>{{evento.destino}}</td>
+        </tr>
+    </ng-template>
+</p-table>
 </ion-content>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import {TableModule} from 'primeng/table';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -19,7 +20,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    TableModule
   ],
   declarations: [ListeventosPage]
 })

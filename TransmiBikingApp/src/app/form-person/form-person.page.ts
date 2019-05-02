@@ -43,7 +43,8 @@ export class FormPersonPage implements OnInit {
       celular: '',
       edad: '',
       url: '',
-      email: ''
+      email: '',
+      eventos: []
     };
   }
 

@@ -44,7 +44,6 @@ import { EventoService } from './servicio/evento.service';
 import { OrderListModule } from 'primeng/orderlist';
 
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -68,7 +67,8 @@ import { OrderListModule } from 'primeng/orderlist';
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    OrderListModule
+    OrderListModule,
+    TableModule
   ],
   providers: [
     StatusBar,

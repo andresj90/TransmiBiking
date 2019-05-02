@@ -6,6 +6,7 @@ import * as firebase from 'firebase/app';
 import { AuthService } from '../servicio/auth.service';
 import { AlertController } from '@ionic/angular';
 import { error } from 'util';
+import { reject } from 'q';
 
 
 @Component({
@@ -15,6 +16,8 @@ import { error } from 'util';
 })
 export class ListeventosPage implements OnInit {
 
+  eventos: any;
+
   constructor(
     public afAuth: AngularFireAuth,
     public db: AngularFirestore,
@@ -23,20 +26,31 @@ export class ListeventosPage implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {
-     this.cargarListaEvenetos();
+  async cargarListaEventos() {
+    if (AuthService.isAuthorized) {
+      this.db.collection('informacionUsuario').doc(this.authService.getIud()).get().subscribe(snapshot => {
+        this.eventos = snapshot.data().eventos.map(element => {
+          return element;
+        });
+      }, error => {
+        this.presentAlert(error);
+      });
+    }
   }
 
-   cargarListaEvenetos(){
-     if (AuthService.isAuthorized) {
-       this.db.collection('informacionUsuario').doc(this.authService.getIud()).get().subscribe(user => {
-          console.log(user.data().eventos);
-       }, error => {
+  async ngOnInit() {
+    this.cargarListaEventos().then();
+  }
 
-       });
-     } else {
-       
-     }
-   }
+  async presentAlert(msg) {
+    const alert = await this.alertController.create({
+      header: 'Suscripción',
+      subHeader: 'Completa',
+      message: msg,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 
 }

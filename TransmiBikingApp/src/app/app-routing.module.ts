@@ -55,8 +55,11 @@ const routes: Routes = [
     path: 'evento',
     loadChildren: './evento/evento.module#EventoPageModule'
   },
-  { path: 'miseventos', 
-   loadChildren: './listeventos/listeventos.module#ListeventosPageModule' }
+  {
+    path: 'miseventos',
+    loadChildren: './listeventos/listeventos.module#ListeventosPageModule',
+    canActivate: [AuthGuardService]
+  }
 
 
 ];

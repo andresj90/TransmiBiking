@@ -52,13 +52,6 @@ export class AuthService {
     return firebase.auth().currentUser.uid;
   }
 
-  // getTokenUsuario(){
-  //   firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
-  //     console.log(idToken);
-  //   }).catch(function(error) {
-  //     console.log(error);
-  //   });
-  // }
   isLoguedIn(loginStatus) {
     if (loginStatus === false) {
       AuthService.isAuthorized = true;
