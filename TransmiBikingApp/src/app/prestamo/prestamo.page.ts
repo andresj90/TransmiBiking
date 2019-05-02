@@ -40,6 +40,7 @@ export class PrestamoPage implements OnInit {
     } else {
       this.auth.createPrestamo(this.data).then(() => {
         this.presentAlertConfirm();
+        
       }, (error) => {
         // alerta
       });

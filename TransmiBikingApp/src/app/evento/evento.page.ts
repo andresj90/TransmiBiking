@@ -1,4 +1,12 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { EventoService } from '../servicio/evento.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFirestore } from 'angularfire2/firestore';
+import * as firebase from 'firebase/app';
+import { AuthService } from '../servicio/auth.service';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-evento',
@@ -6,22 +14,77 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./evento.page.scss'],
 })
 export class EventoPage implements OnInit {
-  cars: Object[];
-  constructor() {
-    this.cars = [
-      { vin: 'r3278r2', year: 2010, brand: 'Audi', color: 'Black' },
-      { vin: 'jhto2g2', year: 2015, brand: 'BMW', color: 'White' },
-      { vin: 'h453w54', year: 2012, brand: 'Honda', color: 'Blue' },
-      { vin: 'g43gwwg', year: 1998, brand: 'Renault', color: 'White' },
-      { vin: 'gf45wg5', year: 2011, brand: 'VW', color: 'Red' },
-      { vin: 'bhv5y5w', year: 2015, brand: 'Jaguar', color: 'Blue' },
-      { vin: 'ybw5fsd', year: 2012, brand: 'Ford', color: 'Yellow' },
-      { vin: '45665e5', year: 2011, brand: 'Mercedes', color: 'Brown' },
-      { vin: 'he6sb5v', year: 2015, brand: 'Ford', color: 'Black' }
-    ];
+  eventos: any;
+
+  constructor(
+    private evento: EventoService,
+    public afAuth: AngularFireAuth,
+    public db: AngularFirestore,
+    private authService: AuthService,
+    private alertController: AlertController,
+    private router: Router
+  ) {
+
   }
-  
+
+  obtenerColeccionEvento() {
+    this.db.collection('eventos').get().subscribe(snapshot => {
+      this.eventos = snapshot.docs.map(doc => {
+        if (doc != null) {
+          console.log(doc.id)
+          return doc;
+        }
+      })
+    }, error => {
+      console.log(error);
+    });
+  }
+
   ngOnInit() {
+    this.obtenerColeccionEvento();
+  }
+
+  suscribirUsuarioAEvento(data) {
+    if (AuthService.isAuthorized) {
+      this.db.collection('informacionUsuario').doc(this.authService.getIud()).update(
+        { eventos: firebase.firestore.FieldValue.arrayUnion(data.id) }
+      ).then(() => {
+        this.presentAlert("Inscripción al evento completada");
+      }).catch((err) => {
+        console.log(err);
+      });
+    } else {
+      this.presentAlertConfirm();
+    }
+  }
+
+  async presentAlert(msg) {
+    const alert = await this.alertController.create({
+      header: 'Suscripción',
+      subHeader: 'Completa',
+      message: msg,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+  async presentAlertConfirm() {
+    const alert = await this.alertController.create({
+      header: 'Alerta',
+      message: 'No se ha identificado un usuario, inicia sesión o registrate para suscribirte al evento',
+      buttons: [
+        {
+          text: 'Okay',
+          cssClass: 'secondary',
+          handler: () => {
+            this.router.navigate(['/login']);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }

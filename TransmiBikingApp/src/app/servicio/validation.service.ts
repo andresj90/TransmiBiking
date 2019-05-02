@@ -23,42 +23,4 @@ export class ValidationService {
       return true;
     }
   }
-
-  validarCampoContrasenaRegistro(passwordCandidato) {
-    var passw = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,16}$/g;
-    if ((passwordCandidato.match(passw)) && passwordCandidato != '') {
-      return true;
-    }
-    else {
-      return false;
-    }
-  }
-
-  validarCampoEdadRegistro(edadIngresada) {
-    console.log(edadIngresada);
-    if (edadIngresada >= 12) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  validarNombreRegistro(nombreIngresado, apellidoIngresado) {
-    console.log(nombreIngresado + "  " +  apellidoIngresado);
-    if(nombreIngresado == '' || apellidoIngresado == '' ){
-      return false;
-    }else {
-      return true;
-    }
-  }
-
-  validarCampoTelefonoRegistro(numeroIngresado) {
-    console.log(numeroIngresado.length);
-    String(numeroIngresado).length
-    if ((/^[0-9]*$/g.test(numeroIngresado)) && (numeroIngresado.length == 10)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 }

@@ -40,6 +40,11 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import {CarouselModule} from 'primeng/carousel';
 import { ValidationService } from './servicio/validation.service';
+import { EventoService } from './servicio/evento.service';
+import { OrderListModule } from 'primeng/orderlist';
+
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -63,6 +68,7 @@ import { ValidationService } from './servicio/validation.service';
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    OrderListModule
   ],
   providers: [
     StatusBar,
@@ -78,6 +84,7 @@ import { ValidationService } from './servicio/validation.service';
     AngularFirestore,
     AuthGuardService,
     ValidationService,
+    EventoService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
