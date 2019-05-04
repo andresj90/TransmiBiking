@@ -78,6 +78,7 @@ export class SettingsPage implements OnInit {
 
   Onsalir() {
     this.auth.logout().then((res) => {
+     AuthService.isAuthorized = false;
       this.router.navigate(['login']);
     }).catch((err) => {
       // alerta
