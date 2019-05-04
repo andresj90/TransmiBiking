@@ -35,7 +35,7 @@ export class EventoPage implements OnInit {
           console.log(doc.data());
           return doc;
         }
-      })
+      });
     }, error => {
       console.log(error);
     });
@@ -50,7 +50,7 @@ export class EventoPage implements OnInit {
       this.db.collection('informacionUsuario').doc(this.authService.getIud()).update(
         { eventos: firebase.firestore.FieldValue.arrayUnion(data.data()) }
       ).then(() => {
-        this.presentAlert("Inscripción al evento completada");
+        this.presentAlert('Inscripción al evento completada');
       }).catch((err) => {
         console.log(err);
       });

@@ -8,7 +8,7 @@ import * as firebase from 'firebase/app';
 })
 export class EventoService {
 
-  
+
   constructor(
     public afAuth: AngularFireAuth,
     public db: AngularFirestore
@@ -18,7 +18,7 @@ export class EventoService {
     this.db.collection('eventos').get().subscribe(snapshot => {
       snapshot.docs.forEach(doc => {
         return doc.data();
-      })
+      });
     }, error => {
       console.log(error);
     });
