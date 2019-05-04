@@ -32,6 +32,7 @@ export class EventoPage implements OnInit {
     this.db.collection('eventos').get().subscribe(snapshot => {
       this.eventos = snapshot.docs.map(doc => {
         if (doc != null) {
+          console.log(doc.data());
           return doc;
         }
       })
