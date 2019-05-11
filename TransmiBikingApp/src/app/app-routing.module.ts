@@ -50,7 +50,6 @@ const routes: Routes = [
     loadChildren: './prestamo/prestamo.module#PrestamoPageModule',
     canActivate: [AuthGuardService]
   },
-  { path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' },
   {
     path: 'evento',
     loadChildren: './evento/evento.module#EventoPageModule'
