@@ -66,7 +66,7 @@ export class AppComponent {
     this.auth.logout();
     AuthService.isAuthorized = false;
     this.inicio = true;
-    AuthService.isAuthorized = true;;
+    AuthService.isAuthorized = true;
     this.router.navigate(['/login']);
   }
 

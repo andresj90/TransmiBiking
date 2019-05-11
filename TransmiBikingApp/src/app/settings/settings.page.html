@@ -11,9 +11,9 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item [routerLink]="[ '/home']">
+    <!-- <ion-item [routerLink]="[ '/home']">
       <ion-button color="secondary">Inicio</ion-button>
-    </ion-item>
+    </ion-item> -->
     <ion-item>
       <ion-button color="secondary" (click)="takePicture()">Camara</ion-button>
       <img *ngIf="image" [src]="image" alt="image">

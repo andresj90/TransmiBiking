@@ -12,7 +12,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class PrestamoPage implements OnInit {
   data: any;
-
+  rutas: any;
   constructor(
     public auth: PrestamoService,
     public flashMensaje: FlashMessagesService,
@@ -32,6 +32,14 @@ export class PrestamoPage implements OnInit {
       adulto: '',
       nino: ''
     };
+    this.rutas = [
+      {ruta: 'Station A'},
+      {ruta: 'Station B'},
+      {ruta: 'Station C'},
+      {ruta: 'Station D'},
+      {ruta: 'Station E'},
+      {ruta: 'Station F'}
+    ];
   }
 
   crearReserva() {

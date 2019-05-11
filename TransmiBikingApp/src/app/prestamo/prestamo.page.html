@@ -22,12 +22,9 @@
         <ion-label>Ruta</ion-label>
         <ion-select multiple="false" name="ruta" placeholder="Seleccione Estaciòn" [(ngModel)]="data.ruta"
           [required]="true">
-          <ion-select-option value="Station A">Station A</ion-select-option>
-          <ion-select-option value="Station A">Station B</ion-select-option>
-          <ion-select-option value="Station A">Station C</ion-select-option>
-          <ion-select-option value="Station A">Station D</ion-select-option>
-          <ion-select-option value="Station A">Station E</ion-select-option>
-          <ion-select-option value="Station A">Station F</ion-select-option>
+          <ion-select-option *ngFor="let c of rutas">
+            {{c.ruta}}
+          </ion-select-option>
         </ion-select>
       </ion-item>
 
