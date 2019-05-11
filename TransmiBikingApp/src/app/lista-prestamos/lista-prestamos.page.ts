@@ -6,10 +6,8 @@ import { PrestamoService } from '../servicio/prestamo.service';
   styleUrls: ['./lista-prestamos.page.scss'],
 })
 export class ListaPrestamosPage implements OnInit {
-  stations = ['Cesar', 'B', 'C', 'D', 'Diana'];
-  hours = [2, 3, 4, 5, 6, 7, 8, 9];
   public colum: any[];
-  prestamo: any;
+  public prestamo = [];
 
   constructor(public prestamoAuth: PrestamoService) {
   }
@@ -21,27 +19,23 @@ export class ListaPrestamosPage implements OnInit {
   }
   MostrarColumnas() {
     this.colum = [
-      { header: 'Numero' },
-      { header: 'Fecha' },
-      { header: 'Origin' },
-      { header: 'bikeType' }
+      { field: 'fecha' , header: 'Fecha' },
+      { field: 'ruta' , header: 'Ruta' },
+      { field: 'adulto' , header: 'Adulto' },
+      { field: 'nino' , header: 'Niño' }
     ];
   }
   Variables() {
-    this.prestamo = {
-      fecha: '',
-      ruta: '',
-      adulto: '',
-      nino: ''
-    };
   }
   MostrarPrestamo() {
     this.prestamoAuth.ObtenerPrestamo().subscribe((prestamo) => {
-      this.prestamo = [];
       prestamo.forEach((prestamodata: any) => {
         this.prestamo.push({
           id: prestamodata.payload.doc.id,
-          data: prestamodata.payload.doc.data()
+          fecha: prestamodata.payload.doc.data().fecha,
+          ruta: prestamodata.payload.doc.data().ruta,
+          adulto: prestamodata.payload.doc.data().adulto,
+          nino: prestamodata.payload.doc.data().nino
         });
       });
     });

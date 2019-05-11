@@ -8,6 +8,8 @@ import { IonicModule } from '@ionic/angular';
 import { PrestamoPage } from './prestamo.page';
 import { PanelModule } from 'primeng/panel';
 import { DialogModule } from 'primeng/dialog';
+import { ListaPrestamosPage } from '../lista-prestamos/lista-prestamos.page';
+import { TableModule } from 'primeng/table';
 const routes: Routes = [
   {
     path: '',
@@ -17,6 +19,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    TableModule,
     CommonModule,
     FormsModule,
     IonicModule,
@@ -24,6 +27,6 @@ const routes: Routes = [
     DialogModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PrestamoPage]
+  declarations: [PrestamoPage, ListaPrestamosPage]
 })
 export class PrestamoPageModule { }

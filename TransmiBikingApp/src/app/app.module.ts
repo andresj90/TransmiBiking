@@ -25,8 +25,8 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { TableModule} from 'primeng/table';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { TableModule } from 'primeng/table';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PanelModule } from 'primeng/panel';
 import { DialogModule } from 'primeng/dialog';
 
@@ -34,18 +34,20 @@ import { DialogModule } from 'primeng/dialog';
 
 // services
 // tslint:disable-next-line:quotemark
-import {  AuthGuardService  } from "./servicio/auth.guard";
+import { AuthGuardService } from "./servicio/auth.guard";
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import {CarouselModule} from 'primeng/carousel';
+import { CarouselModule } from 'primeng/carousel';
 import { ValidationService } from './servicio/validation.service';
 import { EventoService } from './servicio/evento.service';
 import { OrderListModule } from 'primeng/orderlist';
 
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent
+  ],
   entryComponents: [],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

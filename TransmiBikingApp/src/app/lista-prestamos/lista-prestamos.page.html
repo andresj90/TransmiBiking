@@ -1,32 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title text-center>
-      Lista Prestamos
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding>
-  <p-table  [value]="prestamo" [paginator]="true" [rows]="10">
-    <ng-template pTemplate="header">
-      <tr>
-          <th style="width:6em">Fecha</th>
-          <th style="width:6em">Ruta</th>
-          <th style="width:6em">Bicicletas adulto</th>
-          <th style="width:6em">Bicicletas niño</th>
-      </tr>
-    </ng-template>
-      
-    <ng-template pTemplate="body"  let-prestamo>
-      <tr>
-        <td>{{prestamo.data.fecha}}</td>
-        <td>{{prestamo.data.ruta}}</td>
-        <td>{{prestamo.data.adulto}}</td>
-        <td>{{prestamo.data.nino}}</td>
-      </tr>
-    </ng-template>
-  </p-table>
-</ion-content>
+    <p-table [columns]="colum" [value]="prestamo" [paginator]="true" [rows]="10">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let c of columns">
+            {{c.header}}
+          </th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns"  >
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+      </ng-template>
+    </p-table>

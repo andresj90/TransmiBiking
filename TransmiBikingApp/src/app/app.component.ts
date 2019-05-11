@@ -31,11 +31,6 @@ export class AppComponent {
       icon: 'person'
     },
     {
-      title: 'Location',
-      url: '/mapa',
-      icon: 'walk'
-    },
-    {
       title: 'Events',
       url: '/evento',
       icon: 'md-calendar'
