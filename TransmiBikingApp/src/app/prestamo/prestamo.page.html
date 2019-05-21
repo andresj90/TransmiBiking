@@ -30,13 +30,27 @@
 
       <ion-item>
         <ion-label> Cantidad Bicicletas : </ion-label>
-        <br>
-        <ion-label> Adulto </ion-label>
-        <ion-input type="number" id="adulto" name="adulto" min="0" max="2" value="0" [(ngModel)]="data.adulto">
-        </ion-input>
-        <ion-label>Niño </ion-label>
-        <ion-input type="number" id="nino" name="nino" min="0" max="2" value="0" [(ngModel)]="data.nino"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label> Adulto </ion-label>
+        <ion-select multiple="false" id="adulto" name="adulto" [required]="true" placeholder="Seleccione Bicicletas" [(ngModel)]="data.adulto">
+          <ion-select-option *ngFor="let c of bici">
+            {{c.b}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label> Niño </ion-label>
+        <ion-select multiple="false" id="nino" name="nino" [required]="true" placeholder="Seleccione Bicicletas" [(ngModel)]="data.nino">
+            <ion-select-option *ngFor="let c of bici">
+              {{c.b}}
+            </ion-select-option>
+          </ion-select>
+      </ion-item>
+
+
 
       <!-- <ion-button color="primary" expand="block" [routerLink]="[ '/lista-prestamos']">
         Mostrar Prestamos
