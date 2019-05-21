@@ -11,27 +11,22 @@ import { Router } from '@angular/router';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
+      title: 'Inicio',
       url: '/home',
       icon: 'Home'
     },
     {
-      title: 'Get a bike',
+      title: 'Prestamo',
       url: '/prestamo',
       icon: 'calendar'
     },
     {
-      title: 'Settings',
-      url: '/settings',
-      icon: 'settings'
-    },
-    {
-      title: 'Profile',
+      title: 'Perfil',
       url: '/profile',
       icon: 'person'
     },
     {
-      title: 'Events',
+      title: 'Eventos',
       url: '/evento',
       icon: 'md-calendar'
     }

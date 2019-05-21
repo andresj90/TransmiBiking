@@ -13,6 +13,7 @@ import { AlertController } from '@ionic/angular';
 export class PrestamoPage implements OnInit {
   data: any;
   rutas: any;
+  bici: any;
   constructor(
     public auth: PrestamoService,
     public flashMensaje: FlashMessagesService,
@@ -40,6 +41,10 @@ export class PrestamoPage implements OnInit {
       {ruta: 'Station E'},
       {ruta: 'Station F'}
     ];
+    this.bici = [
+      {b: '1'},
+      {b: '2'}
+    ]
   }
 
   crearReserva() {

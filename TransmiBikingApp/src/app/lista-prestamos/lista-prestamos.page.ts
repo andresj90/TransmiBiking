@@ -29,6 +29,7 @@ export class ListaPrestamosPage implements OnInit {
   }
   MostrarPrestamo() {
     this.prestamoAuth.ObtenerPrestamo().subscribe((prestamo) => {
+      this.prestamo = [];
       prestamo.forEach((prestamodata: any) => {
         this.prestamo.push({
           id: prestamodata.payload.doc.id,
