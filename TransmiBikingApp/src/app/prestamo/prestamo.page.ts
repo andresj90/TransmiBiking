@@ -30,8 +30,8 @@ export class PrestamoPage implements OnInit {
     this.data = {
       fecha: '',
       ruta: '',
-      adulto: '',
-      nino: ''
+      adulto: 0,
+      nino: 0
     };
     this.rutas = [
       {ruta: 'Station A'},

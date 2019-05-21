@@ -47,16 +47,16 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.login();
+      // this.login();
     });
   }
-  login() {
-    if (AuthService.isAuthorized) {
-      AuthService.inicio = true;
-    } else {
-      AuthService.salir = false;
-    }
-  }
+  // login() {
+  //   if (AuthService.isAuthorized) {
+  //     AuthService.inicio = true;
+  //   } else {
+  //     AuthService.salir = false;
+  //   }
+  // }
   onClickLogout() {
     this.auth.logout();
     AuthService.isAuthorized = false;
