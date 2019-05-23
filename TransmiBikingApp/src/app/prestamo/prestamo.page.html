@@ -29,12 +29,13 @@
       </ion-item>
 
       <ion-item>
-        <ion-label> Cantidad Bicicletas : </ion-label>
+        <ion-label> Cantidad Bicicletas</ion-label>
       </ion-item>
 
       <ion-item>
         <ion-label> Adulto </ion-label>
-        <ion-select multiple="false" id="adulto" name="adulto" [required]="true" placeholder="Seleccione Bicicletas" [(ngModel)]="data.adulto">
+        <ion-select multiple="false" id="adulto" name="adulto" [required]="true" placeholder="Seleccione Bicicletas"
+          [(ngModel)]="data.adulto">
           <ion-select-option *ngFor="let c of bici">
             {{c.b}}
           </ion-select-option>
@@ -43,11 +44,12 @@
 
       <ion-item>
         <ion-label> Niño </ion-label>
-        <ion-select multiple="false" id="nino" name="nino" [required]="true" placeholder="Seleccione Bicicletas" [(ngModel)]="data.nino">
-            <ion-select-option *ngFor="let c of bici">
-              {{c.b}}
-            </ion-select-option>
-          </ion-select>
+        <ion-select multiple="false" id="nino" name="nino" [required]="true" placeholder="Seleccione Bicicletas"
+          [(ngModel)]="data.nino">
+          <ion-select-option *ngFor="let c of bici">
+            {{c.b}}
+          </ion-select-option>
+        </ion-select>
       </ion-item>
 
 

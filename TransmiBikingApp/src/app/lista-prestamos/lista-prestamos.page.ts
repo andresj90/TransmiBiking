@@ -19,10 +19,10 @@ export class ListaPrestamosPage implements OnInit {
   }
   MostrarColumnas() {
     this.colum = [
-      { field: 'fecha' , header: 'Fecha' },
-      { field: 'ruta' , header: 'Ruta' },
-      { field: 'adulto' , header: 'Adulto' },
-      { field: 'nino' , header: 'Niño' }
+      { field: 'fecha', header: 'Fecha' },
+      { field: 'ruta', header: 'Ruta' },
+      { field: 'adulto', header: 'Adulto' },
+      { field: 'nino', header: 'Niño' }
     ];
   }
   Variables() {

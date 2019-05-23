@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 import { GoogleMaps, GoogleMap, GoogleMapsEvent, LatLng, CameraPosition, MarkerOptions, Marker } from '@ionic-native/google-maps';
 
@@ -18,7 +18,7 @@ export class MapaPage {
 
 
   // tslint:disable-next-line:use-life-cycle-interface
-  ngAfterViewInit () {
+  ngAfterViewInit() {
     this.geolocationNative();
   }
   geolocationNative() {

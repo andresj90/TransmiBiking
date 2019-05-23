@@ -34,16 +34,16 @@ export class PrestamoPage implements OnInit {
       nino: 0
     };
     this.rutas = [
-      {ruta: 'Station A'},
-      {ruta: 'Station B'},
-      {ruta: 'Station C'},
-      {ruta: 'Station D'},
-      {ruta: 'Station E'},
-      {ruta: 'Station F'}
+      { ruta: 'Station A' },
+      { ruta: 'Station B' },
+      { ruta: 'Station C' },
+      { ruta: 'Station D' },
+      { ruta: 'Station E' },
+      { ruta: 'Station F' }
     ];
     this.bici = [
-      {b: '1'},
-      {b: '2'}
+      { b: '1' },
+      { b: '2' }
     ]
   }
 
