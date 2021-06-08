@@ -71,7 +71,7 @@
     "firebase": "^5.9.3",
     "firebaseui": "^3.5.2",
     "firebaseui-angular": "^3.4.1",
-    "glob-parent": "^5.0.0",
+    "glob-parent": "^5.1.2",
     "jquery": "^3.4.1",
     "ngx-qrcode2": "0.0.9",
     "phonegap-plugin-barcodescanner": "8.0.1",
