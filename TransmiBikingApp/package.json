@@ -47,7 +47,7 @@
     "angularfire2": "^5.1.2",
     "bootstrap": "^4.3.1",
     "com.darktalker.cordova.screenshot": "^0.1.6",
-    "cordova-browser": "5.0.4",
+    "cordova-browser": "6.0.0",
     "cordova-plugin-calendar": "5.1.4",
     "cordova-plugin-camera": "~4.0.3",
     "cordova-plugin-compat": "^1.2.0",
